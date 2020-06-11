@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="icon_facebook">&#xf09a;</string>
+    <string name="icon_google">&#xf1a0;</string>
+    <string name="icon_twitter">&#xf099;</string>
+    <string name="icon_search">&#xf002;</string>
+    <string name="icon_location">&#xf041;</string>
+</resources>

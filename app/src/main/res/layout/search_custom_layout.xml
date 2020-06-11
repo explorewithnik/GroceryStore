@@ -1,0 +1,130 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_search"
+    android:layout_width="160dp"
+    android:layout_height="300dp"
+    android:layout_margin="12dp"
+    app:contentPadding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
+
+            <ImageView
+                android:id="@+id/itemImage_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/itemPrice_search"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:lines="2"
+                    android:padding="5dp"
+                    android:text="₹20000"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/itemMRPStrikePrice_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:padding="5dp"
+                    android:text="20000"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/itemName_search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:lines="2"
+                android:padding="5dp"
+                android:text="Turmeric Powder"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemWeight_search"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:text="200 gm"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#55ae6b"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <Button
+
+                android:id="@+id/addItemMinus_search"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="2"
+                android:background="@color/colorPrimaryDark"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/addItem_search"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="6"
+                android:background="#55ae6b"
+                android:text="ADD"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/addItemPlus_search"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="2"
+                android:background="@color/colorPrimaryDark"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

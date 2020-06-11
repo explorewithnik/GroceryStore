@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">The Grocery Store</string>
+    <string name="app_name2"><u><b>The Grocery Store</b></u></string>
+    <string name="title_activity_home_page">The Grocery Store</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_addresses">Addresses</string>
+    <string name="title_activity_search">Search</string>
+
+    <string name="forgot_pass"><u>forgot pass?</u></string>
+    <string name="_2000">2000</string>
+    <string name="search">Search</string>
+    <string name="total_amount_to_be_paid">Total amount to be paid</string>
+    <string name="about_us">About Us</string>
+    <string name="jgug"> <b>The Grocery Store </b> is online shopping mobile application, it will handle whole the activities of the grocery shopping.
+        The system helps in buying of goods, products and services online by choosing the listed products from application.
+        We build an Android application to buy, sell products or goods online using internet connection.
+        Purchasing of goods online, user can choose different products based on categories,
+        online payments , delivery services.
+
+    </string>
+    <string name="fg"> <font size="15"><b>&#x2009;General Benefits</b> \n  \n</font>
+
+• Total Protection Against Data Loss.\n
+• Independence and Security.\n
+• Reduce the Workload.\n
+• Reduce IT Cost and Overall Cost.\n
+• Make all the system computerize.\n
+• Reduce time consumption.\n
+• Reduce error scope.\n
+• All system managements are automated.\n
+• Centralized database management.\n
+• Easy operations for operator of the system.\n
+• No paper work requirement.\n
+    </string>
+    <string name="add_button_text">Add</string>
+    <string name="add_btn_text">Add</string>
+</resources>

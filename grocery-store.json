@@ -1,0 +1,947 @@
+{
+  "data" : {
+    "Banner Images" : {
+      "image:159886" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159886?alt=media&token=28b2d304-61d2-44cb-8dd8-ba56bfc2ef8c"
+      },
+      "image:159891" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159891?alt=media&token=e9b0be9a-5647-455d-a0e9-20acfc43b469"
+      },
+      "image:159892" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159892?alt=media&token=47c0e84c-9259-49de-8e66-a15e35333607"
+      },
+      "image:159893" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159893?alt=media&token=e8a2e468-a885-4823-a2a2-47b8543c9f0c"
+      },
+      "image:159896" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159896?alt=media&token=9445a65a-2fee-47d0-999b-f071930e2a95"
+      },
+      "image:159897" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159897?alt=media&token=e1ffea5a-9682-4f63-bf91-8618d77c4a13"
+      },
+      "image:159898" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159898?alt=media&token=e124b43d-fead-46c8-b8c8-3f11a4f5d6f3"
+      },
+      "image:159899" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159899?alt=media&token=cbda21cd-83c5-462b-a213-03cc3cd7fe52"
+      },
+      "image:159900" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159900?alt=media&token=5c58f0f2-dddb-493d-aca8-d57c625c1296"
+      },
+      "image:159901" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159901?alt=media&token=315cf463-1ca5-4deb-b706-5d7f85ea8364"
+      },
+      "image:159902" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159902?alt=media&token=5f1a3e2b-366c-42c6-baf9-d131f4883d5a"
+      },
+      "image:159903" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159903?alt=media&token=7a274941-b61c-4a34-b56b-0b7cb2c03b24"
+      },
+      "image:159904" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159904?alt=media&token=6e66881a-a597-44e7-92c9-4143ccda88e7"
+      },
+      "image:159905" : {
+        "bannerImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Banner%20Images%2Fimage%3A159905?alt=media&token=4d494238-1375-4ca9-86c6-077fc775fdfe"
+      }
+    },
+    "Category Images" : {
+      "Atta and Other Flours" : {
+        "categoryImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2F161570?alt=media&token=603fd4f8-fb56-404f-be67-acc838944869"
+      },
+      "Dry Fruits & Nuts" : {
+        "categoryImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2F161564?alt=media&token=5b4bfd6f-1ea9-4f0a-837e-82ce18b0e726"
+      },
+      "Pulses" : {
+        "categoryImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2F161568?alt=media&token=ee0abf24-3bc8-4d8d-9cd3-fa977aaf0764"
+      },
+      "Rice & Other Flours" : {
+        "categoryImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FRice%20%26%20Other%20Flours%2F161572?alt=media&token=319d17fd-451e-4de6-b055-1bb4020dafc4"
+      },
+      "Spices" : {
+        "categoryImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FSpices%2F161558?alt=media&token=1f5013a1-6bd8-4a04-b1b7-5c45a674cac0"
+      }
+    },
+    "cartStatus" : {
+      "totalCount" : 0
+    },
+    "itemCount" : {
+      "count" : 0
+    },
+    "items" : {
+      "Atta and Other Flours" : {
+        "Aashirwaad Atta" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Atta",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FAashirwaad%20Atta%2FAashirwaad%20Atta13187?alt=media&token=1011cd35-2878-49a3-b734-a486bb19f007",
+          "itemMRPStrikePrice" : "320",
+          "itemName" : "Aashirwaad Atta",
+          "itemPrice" : 270,
+          "itemWeight" : "10 kg",
+          "plusMinusButton" : "-"
+        },
+        "Fortune Matar Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/FortuneBesan.jpg?alt=media&token=bfb97c8e-e0f5-4d25-a31d-84c0bc5b9c96",
+          "itemMRPStrikePrice" : "55",
+          "itemName" : "Fortune Matar Besan",
+          "itemPrice" : 50,
+          "itemWeight" : "500 gm"
+        },
+        "Kwality Corn Flour" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Corn Flour",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-250x250.png?alt=media&token=94ed60bd-42b6-4634-bc4c-9704ee26147d",
+          "itemMRPStrikePrice" : "45",
+          "itemName" : "Kwality Corn Flour",
+          "itemPrice" : 30,
+          "itemWeight" : "500 gm"
+        },
+        "LaksmiBhog Atta" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Atta",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Flaksmibhog.jpg?alt=media&token=eeb8db8d-2132-4637-afe5-2269398b4c12",
+          "itemMRPStrikePrice" : "320",
+          "itemName" : "LaksmiBhog Atta",
+          "itemPrice" : 270,
+          "itemWeight" : "10 kg"
+        },
+        "Loose Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosebesan.jpg?alt=media&token=2f2b0b9e-0ec8-42d1-8cc7-e9b997015f53",
+          "itemMRPStrikePrice" : "50",
+          "itemName" : "Loose Besan",
+          "itemPrice" : 40,
+          "itemWeight" : "1kg"
+        },
+        "Loose Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosemaida.jpg?alt=media&token=10eaf2e7-fed8-4f8f-b481-87608bfcc8a1",
+          "itemMRPStrikePrice" : "40",
+          "itemName" : "Loose Maida",
+          "itemPrice" : 30,
+          "itemWeight" : "1 kg"
+        },
+        "Natural Corn Flour" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Corn Flour",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-natural.jpg?alt=media&token=67c44760-f155-4bfe-825e-dd4a67b3d362",
+          "itemMRPStrikePrice" : "50",
+          "itemName" : "Natural Corn Flour",
+          "itemPrice" : 28,
+          "itemWeight" : "500 gm"
+        },
+        "Priya Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fpriyamaida.jpg?alt=media&token=ca799796-e9ed-4aad-bfe2-1c3fa688c2b1",
+          "itemMRPStrikePrice" : "25",
+          "itemName" : "Priya Maida",
+          "itemPrice" : 15,
+          "itemWeight" : "500 gm"
+        },
+        "Shakti Bhog Sooji" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Sooji",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/shaktibhogsooji.jpg?alt=media&token=34ccae34-718d-4561-89fd-45985d6d0e1b",
+          "itemMRPStrikePrice" : "30",
+          "itemName" : "Shakti Bhog Sooji",
+          "itemPrice" : 16,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "-"
+        },
+        "Tata Sampann Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/TataBesan.jpg?alt=media&token=35fa04aa-c424-4640-b0ff-d86b56fcd223",
+          "itemMRPStrikePrice" : "51",
+          "itemName" : "Tata Sampann Besan",
+          "itemPrice" : 45,
+          "itemWeight" : "500 gm"
+        },
+        "prayag Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fprayagmaida.jpg?alt=media&token=d2fd9868-cd0c-432e-850c-634acb676ef4",
+          "itemMRPStrikePrice" : "24",
+          "itemName" : "prayag Maida",
+          "itemPrice" : 20,
+          "itemWeight" : "500 gm"
+        }
+      },
+      "Dry Fruits & Nuts" : {
+        "Glonuts Almonds" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Almonds",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FGlonutsAlmonds.jpg?alt=media&token=59342d27-af4e-4efe-ae5d-6e2c9f7373b1",
+          "itemMRPStrikePrice" : "260",
+          "itemName" : "Glonuts Almonds",
+          "itemPrice" : 220,
+          "itemWeight" : "200 gm"
+        },
+        "Glonuts Cashews" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Cashews",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonutcashew.jpg?alt=media&token=7d83ea98-88c5-4c73-89a9-28efd16104bf",
+          "itemMRPStrikePrice" : "350",
+          "itemName" : "Glonuts Cashews",
+          "itemPrice" : 210,
+          "itemWeight" : "200 gm",
+          "plusMinusButton" : "-"
+        },
+        "Glonuts Raisins" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Raisins",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FglonutRaisins.jpg?alt=media&token=65ba83db-f079-4371-b907-3ac4eeeb0c1a",
+          "itemMRPStrikePrice" : "245",
+          "itemName" : "Glonuts Raisins",
+          "itemPrice" : 99,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "+"
+        },
+        "Glonuts walnuts" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Walnuts",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonut%20walnut.jpg?alt=media&token=a5791546-2072-4e45-b182-4536960685e9",
+          "itemMRPStrikePrice" : "169",
+          "itemName" : "Glonuts walnuts",
+          "itemPrice" : 87,
+          "itemWeight" : "200 gm",
+          "plusMinusButton" : "-"
+        },
+        "Loose Almonds" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Almonds",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FlooseAlmonds.jpg?alt=media&token=43c5fa30-0913-453f-ad8b-a7f7e67ba2ab",
+          "itemMRPStrikePrice" : "245",
+          "itemName" : "Loose Almonds",
+          "itemPrice" : 169,
+          "itemWeight" : "200 gm"
+        }
+      },
+      "Pulses" : {
+        "loose Arhar" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Pulses",
+          "itemCatName" : "Arhar",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2Farharloose.jpg?alt=media&token=55bf44c7-8235-4725-9ab1-af3103f41e66",
+          "itemMRPStrikePrice" : "90",
+          "itemName" : "loose Arhar",
+          "itemPrice" : 60,
+          "itemWeight" : "1 kg",
+          "plusMinusButton" : "+"
+        },
+        "loose Urad" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Pulses",
+          "itemCatName" : "Urad",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2FuradLoose.jpg?alt=media&token=5129e6cc-4b66-4e5f-920b-ae65030d7e83",
+          "itemMRPStrikePrice" : "80",
+          "itemName" : "loose Urad",
+          "itemPrice" : 39,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "+"
+        },
+        "loose kabulli chana" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Pulses",
+          "itemCatName" : "kabulli chana",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2FkabulichanaLoose.jpg?alt=media&token=0250f28b-144f-428a-bdbb-6303771f406b",
+          "itemMRPStrikePrice" : "115",
+          "itemName" : "loose kabulli chana",
+          "itemPrice" : 58,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "+"
+        }
+      },
+      "Rice & Other Grains" : {
+        "Kirana King Poha" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Rice & Other Grains",
+          "itemCatName" : "Poha",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FKirana%20King%20Poha%2FKirana%20King%20Poha248557?alt=media&token=3dd753bc-ccda-42cc-b4c9-cb3729c56c27",
+          "itemMRPStrikePrice" : "35",
+          "itemName" : "Kirana King Poha",
+          "itemPrice" : 25,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "-"
+        },
+        "loose Daaliya" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Rice & Other Grains",
+          "itemCatName" : "Daliya",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2Floosedalliya.jpg?alt=media&token=e1c361dc-45eb-42e5-ba2e-c664f2c90837",
+          "itemMRPStrikePrice" : "35",
+          "itemName" : "loose Daaliya",
+          "itemPrice" : 19,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "-"
+        }
+      },
+      "Spices" : {
+        "Catch Black Pepper Powder" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Spices",
+          "itemCatName" : "Black Pepper",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Black%20Pepper%20Powder%2FCatch%20Black%20Pepper%20Powder18113?alt=media&token=f479908a-c6c3-4f8a-976f-f0fb6209e746",
+          "itemMRPStrikePrice" : "180",
+          "itemName" : "Catch Black Pepper Powder",
+          "itemPrice" : 126,
+          "itemWeight" : "100 gm",
+          "plusMinusButton" : "-"
+        },
+        "Catch Garam Masala " : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Spices",
+          "itemCatName" : "Garam Masala",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Garam%20Masala%20%2FCatch%20Garam%20Masala%2018113?alt=media&token=8ebfb587-50e2-45cb-a758-7a284d5938c3",
+          "itemMRPStrikePrice" : "90",
+          "itemName" : "Catch Garam Masala ",
+          "itemPrice" : 70,
+          "itemWeight" : "100 gm",
+          "plusMinusButton" : "-"
+        },
+        "Catch Jeera Powder" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Spices",
+          "itemCatName" : "Jeera",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Jeera%20Powder%2FCatch%20Jeera%20Powder18113?alt=media&token=2e490d4d-b3f4-49b0-bb37-8af556a4d254",
+          "itemMRPStrikePrice" : "150",
+          "itemName" : "Catch Jeera Powder",
+          "itemPrice" : 120,
+          "itemWeight" : "100 gm",
+          "plusMinusButton" : "-"
+        },
+        "Loose Ajwain" : {
+          "buttonItemCount" : 0
+        },
+        "Natraj Ajwain" : {
+          "buttonItemCount" : 0
+        },
+        "Shyam white Pepper Powder" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Spices",
+          "itemCatName" : "white Pepper",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FShyam%20white%20paper%20Powder%2FShyam%20white%20paper%20Powder18113?alt=media&token=9180ed9a-a92e-4dc9-9843-88907321756e",
+          "itemMRPStrikePrice" : "200",
+          "itemName" : "Shyam white Pepper Powder",
+          "itemPrice" : 150,
+          "itemWeight" : "50 gm",
+          "plusMinusButton" : "+"
+        }
+      }
+    },
+    "products" : {
+      "Atta and Other Flours" : {
+        "Atta" : {
+          "Aashirwaad Atta" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Atta",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FAashirwaad%20Atta%2FAashirwaad%20Atta13187?alt=media&token=1011cd35-2878-49a3-b734-a486bb19f007",
+            "itemMRPStrikePrice" : "320",
+            "itemName" : "Aashirwaad Atta",
+            "itemPrice" : 270,
+            "itemWeight" : "10 kg"
+          },
+          "LaksmiBhog Atta" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Atta",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Flaksmibhog.jpg?alt=media&token=eeb8db8d-2132-4637-afe5-2269398b4c12",
+            "itemMRPStrikePrice" : "320",
+            "itemName" : "LaksmiBhog Atta",
+            "itemPrice" : 270,
+            "itemWeight" : "10 kg"
+          }
+        },
+        "Besan" : {
+          "Fortune Matar Besan" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Besan",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/FortuneBesan.jpg?alt=media&token=bfb97c8e-e0f5-4d25-a31d-84c0bc5b9c96",
+            "itemMRPStrikePrice" : "55",
+            "itemName" : "Fortune Matar Besan",
+            "itemPrice" : 50,
+            "itemWeight" : "500 gm"
+          },
+          "Loose Besan" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Besan",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosebesan.jpg?alt=media&token=2f2b0b9e-0ec8-42d1-8cc7-e9b997015f53",
+            "itemMRPStrikePrice" : "50",
+            "itemName" : "Loose Besan",
+            "itemPrice" : 40,
+            "itemWeight" : "1kg"
+          },
+          "Tata Sampann Besan" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Besan",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/TataBesan.jpg?alt=media&token=35fa04aa-c424-4640-b0ff-d86b56fcd223",
+            "itemMRPStrikePrice" : "51",
+            "itemName" : "Tata Sampann Besan",
+            "itemPrice" : 45,
+            "itemWeight" : "500 gm"
+          }
+        },
+        "Corn Flour" : {
+          "Kwality Corn Flour" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Corn Flour",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-250x250.png?alt=media&token=94ed60bd-42b6-4634-bc4c-9704ee26147d",
+            "itemMRPStrikePrice" : "45",
+            "itemName" : "Kwality Corn Flour",
+            "itemPrice" : 30,
+            "itemWeight" : "500 gm"
+          },
+          "Natural Corn Flour" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Corn Flour",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-natural.jpg?alt=media&token=67c44760-f155-4bfe-825e-dd4a67b3d362",
+            "itemMRPStrikePrice" : "50",
+            "itemName" : "Natural Corn Flour",
+            "itemPrice" : 28,
+            "itemWeight" : "500 gm"
+          }
+        },
+        "Maida" : {
+          "Loose Maida" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Maida",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosemaida.jpg?alt=media&token=10eaf2e7-fed8-4f8f-b481-87608bfcc8a1",
+            "itemMRPStrikePrice" : "40",
+            "itemName" : "Loose Maida",
+            "itemPrice" : 30,
+            "itemWeight" : "1 kg"
+          },
+          "Priya Maida" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Maida",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fpriyamaida.jpg?alt=media&token=ca799796-e9ed-4aad-bfe2-1c3fa688c2b1",
+            "itemMRPStrikePrice" : "25",
+            "itemName" : "Priya Maida",
+            "itemPrice" : 15,
+            "itemWeight" : "500 gm"
+          },
+          "prayag Maida" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Maida",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fprayagmaida.jpg?alt=media&token=d2fd9868-cd0c-432e-850c-634acb676ef4",
+            "itemMRPStrikePrice" : "24",
+            "itemName" : "prayag Maida",
+            "itemPrice" : 20,
+            "itemWeight" : "500 gm"
+          }
+        },
+        "Sooji" : {
+          "Shakti Bhog Sooji" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Atta and Other Flours",
+            "itemCatName" : "Sooji",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/shaktibhogsooji.jpg?alt=media&token=34ccae34-718d-4561-89fd-45985d6d0e1b",
+            "itemMRPStrikePrice" : "30",
+            "itemName" : "Shakti Bhog Sooji",
+            "itemPrice" : 16,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "-"
+          }
+        }
+      },
+      "Dry Fruits & Nuts" : {
+        "Almonds" : {
+          "Glonuts Almonds" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Dry Fruits & Nuts",
+            "itemCatName" : "Almonds",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FGlonutsAlmonds.jpg?alt=media&token=59342d27-af4e-4efe-ae5d-6e2c9f7373b1",
+            "itemMRPStrikePrice" : "260",
+            "itemName" : "Glonuts Almonds",
+            "itemPrice" : 220,
+            "itemWeight" : "200 gm"
+          },
+          "Loose Almonds" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Dry Fruits & Nuts",
+            "itemCatName" : "Almonds",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FlooseAlmonds.jpg?alt=media&token=43c5fa30-0913-453f-ad8b-a7f7e67ba2ab",
+            "itemMRPStrikePrice" : "245",
+            "itemName" : "Loose Almonds",
+            "itemPrice" : 169,
+            "itemWeight" : "200 gm"
+          }
+        },
+        "Cashews" : {
+          "Glonuts Cashews" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Dry Fruits & Nuts",
+            "itemCatName" : "Cashews",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonutcashew.jpg?alt=media&token=7d83ea98-88c5-4c73-89a9-28efd16104bf",
+            "itemMRPStrikePrice" : "350",
+            "itemName" : "Glonuts Cashews",
+            "itemPrice" : 210,
+            "itemWeight" : "200 gm",
+            "plusMinusButton" : "-"
+          }
+        },
+        "Raisins" : {
+          "Glonuts Raisins" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Dry Fruits & Nuts",
+            "itemCatName" : "Raisins",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FglonutRaisins.jpg?alt=media&token=65ba83db-f079-4371-b907-3ac4eeeb0c1a",
+            "itemMRPStrikePrice" : "245",
+            "itemName" : "Glonuts Raisins",
+            "itemPrice" : 99,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "+"
+          }
+        },
+        "Walnuts" : {
+          "Glonuts walnuts" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Dry Fruits & Nuts",
+            "itemCatName" : "Walnuts",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonut%20walnut.jpg?alt=media&token=a5791546-2072-4e45-b182-4536960685e9",
+            "itemMRPStrikePrice" : "169",
+            "itemName" : "Glonuts walnuts",
+            "itemPrice" : 87,
+            "itemWeight" : "200 gm",
+            "plusMinusButton" : "-"
+          }
+        }
+      },
+      "Ghee" : {
+        "Desi Ghee" : {
+          "Paras Ghee" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Ghee",
+            "itemCatName" : "Desi Ghee",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FGhee%2FParasGhee.jpg?alt=media&token=ec9a4566-a62c-468b-85e1-71ecf1b801ca",
+            "itemMRPStrikePrice" : "485",
+            "itemName" : "Paras Ghee",
+            "itemPrice" : 337,
+            "itemWeight" : "1 lt"
+          },
+          "Patanjali Ghee" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Ghee",
+            "itemCatName" : "Desi Ghee",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FGhee%2FPatanjalighee.jpg?alt=media&token=59d3191b-a461-4b8b-a4b8-de3bb70ce120",
+            "itemMRPStrikePrice" : "510",
+            "itemName" : "Patanjali Ghee",
+            "itemPrice" : 500,
+            "itemWeight" : "1 lt"
+          }
+        }
+      },
+      "Pulses" : {
+        "Arhar" : {
+          "loose Arhar" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Pulses",
+            "itemCatName" : "Arhar",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2Farharloose.jpg?alt=media&token=55bf44c7-8235-4725-9ab1-af3103f41e66",
+            "itemMRPStrikePrice" : "90",
+            "itemName" : "loose Arhar",
+            "itemPrice" : 60,
+            "itemWeight" : "1 kg",
+            "plusMinusButton" : "+"
+          }
+        },
+        "Urad" : {
+          "loose Urad" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Pulses",
+            "itemCatName" : "Urad",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2FuradLoose.jpg?alt=media&token=5129e6cc-4b66-4e5f-920b-ae65030d7e83",
+            "itemMRPStrikePrice" : "80",
+            "itemName" : "loose Urad",
+            "itemPrice" : 39,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "+"
+          }
+        },
+        "kabulli chana" : {
+          "loose kabulli chana" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Pulses",
+            "itemCatName" : "kabulli chana",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2FkabulichanaLoose.jpg?alt=media&token=0250f28b-144f-428a-bdbb-6303771f406b",
+            "itemMRPStrikePrice" : "115",
+            "itemName" : "loose kabulli chana",
+            "itemPrice" : 58,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "+"
+          }
+        }
+      },
+      "Rice & Other Grains" : {
+        "Daliya" : {
+          "Patanjali Dalia" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Rice",
+            "itemCatName" : "Daliya",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FRice%20%26%20Other%20Flours%2FpatanjaliDaliya.png?alt=media&token=0c6cc2b8-d43a-4ba9-ab65-edbbd409e620",
+            "itemMRPStrikePrice" : "45",
+            "itemName" : "Patanjali Dalia",
+            "itemPrice" : 41,
+            "itemWeight" : "1 kg"
+          },
+          "Patanjali Oats" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Rice",
+            "itemCatName" : "Daliya",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FRice%20%26%20Other%20Flours%2Fpatanjalioats.jpg?alt=media&token=968b8d5d-9864-4452-aca3-dcd0b9324135",
+            "itemMRPStrikePrice" : "35",
+            "itemName" : "Patanjali Oats",
+            "itemPrice" : 19,
+            "itemWeight" : "500 gm"
+          },
+          "loose Daaliya" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Rice & Other Grains",
+            "itemCatName" : "Daliya",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FPulses%2Floosedalliya.jpg?alt=media&token=e1c361dc-45eb-42e5-ba2e-c664f2c90837",
+            "itemMRPStrikePrice" : "35",
+            "itemName" : "loose Daaliya",
+            "itemPrice" : 19,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "-"
+          }
+        },
+        "Poha" : {
+          "Kirana King Poha" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Rice & Other Grains",
+            "itemCatName" : "Poha",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FKirana%20King%20Poha%2FKirana%20King%20Poha248557?alt=media&token=3dd753bc-ccda-42cc-b4c9-cb3729c56c27",
+            "itemMRPStrikePrice" : "35",
+            "itemName" : "Kirana King Poha",
+            "itemPrice" : 25,
+            "itemWeight" : "500 gm",
+            "plusMinusButton" : "-"
+          }
+        }
+      },
+      "Spices" : {
+        "Ajwain" : {
+          "Loose Ajwain" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "Ajwain",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FSpices%2Fajwainloose.jpg?alt=media&token=ed562820-7c0f-4e3c-85e3-d2d60027fdcd",
+            "itemMRPStrikePrice" : "50",
+            "itemName" : "Loose Ajwain",
+            "itemPrice" : 25,
+            "itemWeight" : "100 gm"
+          },
+          "Natraj Ajwain" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "Ajwain",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FSpices%2FNatrajAjwain.jpg?alt=media&token=63e2e5f0-72d8-4747-9043-b65f0291d35a",
+            "itemMRPStrikePrice" : "65",
+            "itemName" : "Natraj Ajwain",
+            "itemPrice" : 23,
+            "itemWeight" : "100 gm"
+          }
+        },
+        "Black Pepper" : {
+          "Catch Black Pepper Powder" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "Black Pepper",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Black%20Pepper%20Powder%2FCatch%20Black%20Pepper%20Powder18113?alt=media&token=f479908a-c6c3-4f8a-976f-f0fb6209e746",
+            "itemMRPStrikePrice" : "180",
+            "itemName" : "Catch Black Pepper Powder",
+            "itemPrice" : 126,
+            "itemWeight" : "100 gm",
+            "plusMinusButton" : "-"
+          }
+        },
+        "Garam Masala" : {
+          "Catch Garam Masala " : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "Garam Masala",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Garam%20Masala%20%2FCatch%20Garam%20Masala%2018113?alt=media&token=8ebfb587-50e2-45cb-a758-7a284d5938c3",
+            "itemMRPStrikePrice" : "90",
+            "itemName" : "Catch Garam Masala ",
+            "itemPrice" : 70,
+            "itemWeight" : "100 gm",
+            "plusMinusButton" : "-"
+          }
+        },
+        "Jeera" : {
+          "Catch Jeera Powder" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "Jeera",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FCatch%20Jeera%20Powder%2FCatch%20Jeera%20Powder18113?alt=media&token=2e490d4d-b3f4-49b0-bb37-8af556a4d254",
+            "itemMRPStrikePrice" : "150",
+            "itemName" : "Catch Jeera Powder",
+            "itemPrice" : 120,
+            "itemWeight" : "100 gm",
+            "plusMinusButton" : "-"
+          }
+        },
+        "white Pepper" : {
+          "Shyam white Pepper Powder" : {
+            "buttonItemCount" : 0,
+            "categoryName" : "Spices",
+            "itemCatName" : "white Pepper",
+            "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FShyam%20white%20paper%20Powder%2FShyam%20white%20paper%20Powder18113?alt=media&token=9180ed9a-a92e-4dc9-9843-88907321756e",
+            "itemMRPStrikePrice" : "200",
+            "itemName" : "Shyam white Pepper Powder",
+            "itemPrice" : 150,
+            "itemWeight" : "50 gm",
+            "plusMinusButton" : "+"
+          }
+        }
+      }
+    },
+    "search" : {
+      "products" : {
+        "Aashirwaad Atta" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Atta",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Item%20Images%2FAashirwaad%20Atta%2FAashirwaad%20Atta13187?alt=media&token=1011cd35-2878-49a3-b734-a486bb19f007",
+          "itemMRPStrikePrice" : "320",
+          "itemName" : "Aashirwaad Atta",
+          "itemPrice" : 270,
+          "itemWeight" : "10 kg",
+          "searchItemName" : "atta aashirwaad"
+        },
+        "Fortune Matar Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/FortuneBesan.jpg?alt=media&token=bfb97c8e-e0f5-4d25-a31d-84c0bc5b9c96",
+          "itemMRPStrikePrice" : "55",
+          "itemName" : "Fortune Matar Besan",
+          "itemPrice" : 50,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "besan fortune matar "
+        },
+        "Glonuts Almonds" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Almonds",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FGlonutsAlmonds.jpg?alt=media&token=59342d27-af4e-4efe-ae5d-6e2c9f7373b1",
+          "itemMRPStrikePrice" : "260",
+          "itemName" : "Glonuts Almonds",
+          "itemPrice" : 220,
+          "itemWeight" : "200 gm",
+          "searchItemName" : "almonds glonuts "
+        },
+        "Glonuts Cashews" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Cashews",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonutcashew.jpg?alt=media&token=7d83ea98-88c5-4c73-89a9-28efd16104bf",
+          "itemMRPStrikePrice" : "350",
+          "itemName" : "Glonuts Cashews",
+          "itemPrice" : 210,
+          "itemWeight" : "200 gm",
+          "plusMinusButton" : "-",
+          "searchItemName" : "cashews glonuts "
+        },
+        "Glonuts Raisins" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Raisins",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FglonutRaisins.jpg?alt=media&token=65ba83db-f079-4371-b907-3ac4eeeb0c1a",
+          "itemMRPStrikePrice" : "245",
+          "itemName" : "Glonuts Raisins",
+          "itemPrice" : 99,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "+",
+          "searchItemName" : "raisins glonuts "
+        },
+        "Glonuts walnuts" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "walnuts",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2Fglonut%20walnut.jpg?alt=media&token=a5791546-2072-4e45-b182-4536960685e9",
+          "itemMRPStrikePrice" : "169",
+          "itemName" : "Glonuts walnuts",
+          "itemPrice" : 87,
+          "itemWeight" : "200 gm",
+          "plusMinusButton" : "-",
+          "searchItemName" : "walnuts glonuts "
+        },
+        "Kwality Corn Flour" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Corn Flour",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-250x250.png?alt=media&token=94ed60bd-42b6-4634-bc4c-9704ee26147d",
+          "itemMRPStrikePrice" : "45",
+          "itemName" : "Kwality Corn Flour",
+          "itemPrice" : 30,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "corn kwality flour"
+        },
+        "LaksmiBhog Atta" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Atta",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Flaksmibhog.jpg?alt=media&token=eeb8db8d-2132-4637-afe5-2269398b4c12",
+          "itemMRPStrikePrice" : "320",
+          "itemName" : "LaksmiBhog Atta",
+          "itemPrice" : 270,
+          "itemWeight" : "10 kg",
+          "searchItemName" : "atta laksmiBhog"
+        },
+        "Loose Almonds" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Dry Fruits & Nuts",
+          "itemCatName" : "Almonds",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FDry%20Fruits%20%26%20Nuts%2FlooseAlmonds.jpg?alt=media&token=43c5fa30-0913-453f-ad8b-a7f7e67ba2ab",
+          "itemMRPStrikePrice" : "245",
+          "itemName" : "Loose Almonds",
+          "itemPrice" : 169,
+          "itemWeight" : "200 gm",
+          "searchItemName" : "almonds loose "
+        },
+        "Loose Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosebesan.jpg?alt=media&token=2f2b0b9e-0ec8-42d1-8cc7-e9b997015f53",
+          "itemMRPStrikePrice" : "50",
+          "itemName" : "Loose Besan",
+          "itemPrice" : 40,
+          "itemWeight" : "1kg",
+          "searchItemName" : "besan loose "
+        },
+        "Loose Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Floosemaida.jpg?alt=media&token=10eaf2e7-fed8-4f8f-b481-87608bfcc8a1",
+          "itemMRPStrikePrice" : "40",
+          "itemName" : "Loose Maida",
+          "itemPrice" : 30,
+          "itemWeight" : "1 kg",
+          "searchItemName" : "maida loose"
+        },
+        "Natural Corn Flour" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Corn Flour",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fcorn-flour-natural.jpg?alt=media&token=67c44760-f155-4bfe-825e-dd4a67b3d362",
+          "itemMRPStrikePrice" : "50",
+          "itemName" : "Natural Corn Flour",
+          "itemPrice" : 28,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "corn flour natural"
+        },
+        "Priya Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fpriyamaida.jpg?alt=media&token=ca799796-e9ed-4aad-bfe2-1c3fa688c2b1",
+          "itemMRPStrikePrice" : "25",
+          "itemName" : "Priya Maida",
+          "itemPrice" : 15,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "maida priya"
+        },
+        "Shakti Bhog Sooji" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Sooji",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/shaktibhogsooji.jpg?alt=media&token=34ccae34-718d-4561-89fd-45985d6d0e1b",
+          "itemMRPStrikePrice" : "30",
+          "itemName" : "Shakti Bhog Sooji",
+          "itemPrice" : 16,
+          "itemWeight" : "500 gm",
+          "plusMinusButton" : "-",
+          "searchItemName" : "sooji shakti bhog "
+        },
+        "Tata Sampann Besan" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Besan",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/TataBesan.jpg?alt=media&token=35fa04aa-c424-4640-b0ff-d86b56fcd223",
+          "itemMRPStrikePrice" : "51",
+          "itemName" : "Tata Sampann Besan",
+          "itemPrice" : 45,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "besan tata sampann "
+        },
+        "prayag Maida" : {
+          "buttonItemCount" : 0,
+          "categoryName" : "Atta and Other Flours",
+          "itemCatName" : "Maida",
+          "itemImage" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/Category%20Images%2FAtta%20and%20Other%20Flours%2Fprayagmaida.jpg?alt=media&token=d2fd9868-cd0c-432e-850c-634acb676ef4",
+          "itemMRPStrikePrice" : "24",
+          "itemName" : "prayag Maida",
+          "itemPrice" : 20,
+          "itemWeight" : "500 gm",
+          "searchItemName" : "maida prayag "
+        }
+      }
+    },
+    "spinner" : {
+      "category" : {
+        "Atta and Other Flours" : {
+          "categoryName" : "Atta and Other Flours"
+        },
+        "Dry Fruits & Nuts" : {
+          "categoryName" : "Dry Fruits & Nuts"
+        },
+        "Pulses" : {
+          "categoryName" : "Pulses"
+        },
+        "Rice & Other Flours" : {
+          "categoryName" : "Rice & Other Flours"
+        },
+        "Spices" : {
+          "categoryName" : "Spices"
+        }
+      }
+    },
+    "totalPrice" : {
+      "total" : 790
+    },
+    "users" : {
+      "1234567890" : {
+        "dob" : "11/6/2020",
+        "email" : "chess@gmail.com",
+        "id" : "-M9Yh23OEYN0OrT6TOi-",
+        "image_URL" : "https://firebasestorage.googleapis.com/v0/b/grocery-store-457ab.appspot.com/o/142092?alt=media&token=d1887e68-c301-4c5b-9aa6-c07c085d8a27",
+        "mobile" : "1234567890",
+        "name" : "Chess",
+        "password" : "chess123"
+      }
+    }
+  }
+}

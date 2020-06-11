@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.niket.grocerystore">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Activities.Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.Register"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity
+            android:name=".Activities.HomePage"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Search.SearchViewActivity"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".CartActivity.Cart"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".ExpandableRecyclerViewImplementation.ExpandableListing"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".Activities.OrderHistory"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".Activities.Profile"
+            android:label="Edit Profile"
+            android:parentActivityName=".Activities.HomePage"
+            android:windowSoftInputMode="adjustNothing">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity android:name=".Activities.NoInternetConnection" />
+        <activity android:name=".ForgotPass.EnterEmail" />
+        <activity
+            android:name=".ForgotPass.UpdatePass"
+            android:label="Password reset" />
+        <activity
+            android:name=".Activities.More"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".ExpandableRecyclerViewImplementation.CategoryChildListing"
+            android:parentActivityName=".ExpandableRecyclerViewImplementation.ExpandableListing">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExpandableRecyclerViewImplementation.ExpandableListing" />
+        </activity>
+        <activity
+            android:name=".Adress.UserAddress"
+            android:parentActivityName=".Activities.HomePage"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".Adress.AddAddress"
+            android:parentActivityName=".Activities.HomePage"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity android:name=".PaymentGateway.PaymentOptions" />
+        <activity
+            android:name=".Adress.NavigationAddress"
+            android:parentActivityName=".Activities.HomePage"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+        <activity
+            android:name=".Activities.AboutUs"
+            android:label="About Us"
+            android:parentActivityName=".Activities.HomePage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.HomePage" />
+        </activity>
+    </application>
+
+</manifest>
