@@ -1,12 +1,15 @@
 package com.example.niket.grocerystore.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -33,11 +37,13 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
 
     private ArrayList<Category_Items_POJO> categoriesItemsPOJOArrayList;
     private Context mContext;
+    private String userMobile;
     private DatabaseReference databaseReference;
     private DatabaseReference databaseReferenceForSearch;
     private DatabaseReference databaseReference2;
     private String CategoryName;
     private Category_Items_POJO category_items_pojo1;
+    SharedPreferences sharedPreferences;
 
     MyCustomAdapterForItems(Context context, ArrayList<Category_Items_POJO> categoriesItemsPOJOArrayList, String CategoryName) {
         this.mContext = context;
@@ -55,7 +61,12 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
 
     @Override
     public void onBindViewHolder(final MyCustomAdapterForItems.ContactViewHolder holder, int position) {
+        sharedPreferences = mContext.getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
+        Log.e("userMobile", "userMobile " + userMobile);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+
         databaseReference = firebaseDatabase.getReference("data").child("Cart").child("products");
         databaseReference2 = firebaseDatabase.getReference("data").child("products");
         databaseReferenceForSearch = firebaseDatabase.getReference("data").child("search").child("products");
@@ -78,7 +89,9 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
         } else {
             holder.addButton.setTextColor(mContext.getResources().getColor(R.color.black_light));
             holder.addButton.setBackgroundColor(Color.WHITE);
-            String addButtonText = category_items_pojo.getButtonItemCount().toString();
+            String addButtonText = "0";
+            if (category_items_pojo.getButtonItemCount() != null)
+                addButtonText = category_items_pojo.getButtonItemCount().toString();
             holder.addButton.setText(addButtonText);
             holder.addMinusButton.setVisibility(View.VISIBLE);
         }
@@ -118,6 +131,8 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                                 category_items_pojo2.setItemImage(category_items_pojo1.getItemImage());
                                 category_items_pojo2.setTotalItemAmount((count + 1) * (category_items_pojo1.getItemPrice()));
                                 category_items_pojo2.setItemCatName(category_items_pojo1.getItemCatName());
+
+
                                 databaseReference.child(category_items_pojo1.getItemName()).setValue(category_items_pojo2);
                                 databaseReference2.child(CategoryName).child(category_items_pojo1.getItemCatName()).child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);
                                 databaseReferenceForSearch.child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);

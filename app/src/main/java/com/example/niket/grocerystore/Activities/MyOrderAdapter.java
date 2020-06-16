@@ -29,7 +29,6 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ContactV
 
     @Override
     public void onBindViewHolder(MyOrderAdapter.ContactViewHolder holder, int position) {
-
         OrderPojo orderPojo = orderPojoArrayList.get(position);
         String orderName = orderPojo.getFlatNo()+", "+orderPojo.getLandMark();
         holder.orderName.setText(orderName);

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -32,8 +33,6 @@ public class AddAddress extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
-    AddressPojo addressPojo;
 
     String totalAmount;
 
@@ -86,6 +85,7 @@ public class AddAddress extends AppCompatActivity {
         flatno = intent.getStringExtra("flatno2");
         deleteKey = intent.getStringExtra("deleteKey");
 
+        Log.e("data", "name " + name + " mobile " + mobile + " state " + state + " city " + city + " pin " + pin + " email " + email + " landmark " + landmark + " flatno " + flatno + " deleteKey " + deleteKey);
 
         title = intent.getStringExtra("title");
 
@@ -107,38 +107,49 @@ public class AddAddress extends AppCompatActivity {
                 intent = getIntent();
                 if (TextUtils.isEmpty(edAddress.getText().toString().trim())) {
                     edAddress.setError("address can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edLandmark.getText().toString().trim())) {
                     edLandmark.setError("landmark can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edState.getText().toString().trim())) {
                     edState.setError("state can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edCity.getText().toString().trim())) {
                     edCity.setError("city can't be empty");
+                    return;
                 }
-                if (!edName.getText().toString().trim().matches(namePattern)) {
-                    edName.setError("name must be minumum 2 and maximum 15 letters only");
-                }
+//                if (!edName.getText().toString().trim().matches(namePattern)) {
+//                    edName.setError("name must be minumum 2 and maximum 15 letters only");
+//                    return;
+//                }
                 if (TextUtils.isEmpty(edName.getText().toString().trim())) {
                     edName.setError("name can't be empty");
+                    return;
                 }
 
                 if (!edEmail.getText().toString().trim().matches(emailPattern)) {
                     edEmail.setError("invalid email");
+                    return;
                 }
                 if (TextUtils.isEmpty(edEmail.getText().toString().trim())) {
                     edEmail.setError("email can't be empty");
+                    return;
                 }
                 if (!edContact.getText().toString().trim().matches(mobilePattern)) {
                     edContact.setError("mobile must be of 10 digits");
+                    return;
                 }
                 if (TextUtils.isEmpty(edContact.getText().toString().trim())) {
                     edContact.setError("mobile can't be empty");
+                    return;
                 }
 
                 if (TextUtils.isEmpty(edPIN.getText().toString().trim())) {
                     edPIN.setError("PIN can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edName.getText().toString().trim())
                         && TextUtils.isEmpty(edCity.getText().toString().trim())
@@ -159,8 +170,16 @@ public class AddAddress extends AppCompatActivity {
                     edState.setError(null);
                     edPIN.setError(null);
                     Toast.makeText(AddAddress.this, "All the fields are mandatory   ", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (edName.getText().toString().trim().matches(namePattern) && edContact.getText().toString().trim().matches(mobilePattern)
+                } else if (!TextUtils.isEmpty(edName.getText().toString().trim())
+                        && !TextUtils.isEmpty(edCity.getText().toString().trim())
+                        && !TextUtils.isEmpty(edEmail.getText().toString().trim())
+                        && !TextUtils.isEmpty(edContact.getText().toString().trim())
+                        && !TextUtils.isEmpty(edAddress.getText().toString().trim())
+                        && !TextUtils.isEmpty(edLandmark.getText().toString().trim())
+                        && !TextUtils.isEmpty(edState.getText().toString().trim())
+                        && !TextUtils.isEmpty(edPIN.getText().toString().trim())
+                ) {
+                    if (/*edName.getText().toString().trim().matches(namePattern) &&*/ edContact.getText().toString().trim().matches(mobilePattern)
                             && edEmail.getText().toString().trim().matches(emailPattern)) {
 
                         dialog.show();
@@ -172,20 +191,13 @@ public class AddAddress extends AppCompatActivity {
                         edState.setError(null);
                         edPIN.setError(null);
 
-                        addressPojo = new AddressPojo();
-                        addressPojo.setName(edName.getText().toString().trim());
-                        addressPojo.setEmail(edEmail.getText().toString().trim());
-                        addressPojo.setAddress(edAddress.getText().toString().trim().trim());
-                        addressPojo.setLandmark(edLandmark.getText().toString().trim());
-                        addressPojo.setMobile(edContact.getText().toString().trim());
-                        addressPojo.setPin(edPIN.getText().toString().trim());
-                        addressPojo.setState(edState.getText().toString().trim());
-                        addressPojo.setCity(edCity.getText().toString().trim());
-
+                        AddressClass addressClass = new AddressClass(edName.getText().toString().trim(), edLandmark.getText().toString().trim(), edContact.getText().toString().trim(), edEmail.getText().toString().trim(), edPIN.getText().toString().trim(), edState.getText().toString().trim(), edCity.getText().toString().trim(), edAddress.getText().toString().trim().trim(),deleteKey);
 
                         userMobile = sharedPreferences.getString("userMobile", "");
                         databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Address");
-                        databaseReference.push().setValue(addressPojo);
+                        Log.e("navaddress", "landmark " + addressClass.getUserLandmark() + " pin " + addressClass.getUserPinCode() + " city " + addressClass.getUserCity());
+
+                        databaseReference.push().setValue(addressClass);
 
                         dialog.cancel();
                         String title = intent.getStringExtra("title2");
@@ -227,38 +239,49 @@ public class AddAddress extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(edAddress.getText().toString().trim())) {
                     edAddress.setError("address can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edLandmark.getText().toString().trim())) {
                     edLandmark.setError("landmark can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edState.getText().toString().trim())) {
                     edState.setError("state can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edCity.getText().toString().trim())) {
                     edCity.setError("city can't be empty");
+                    return;
                 }
-                if (!edName.getText().toString().trim().matches(namePattern)) {
-                    edName.setError("name must be minumum 2 and maximum 15 letters only");
-                }
+//                if (!edName.getText().toString().trim().matches(namePattern)) {
+//                    edName.setError("name must be minumum 2 and maximum 15 letters only");
+//                    return;
+//                }
                 if (TextUtils.isEmpty(edName.getText().toString().trim())) {
                     edName.setError("name can't be empty");
+                    return;
                 }
 
                 if (!edEmail.getText().toString().trim().matches(emailPattern)) {
                     edEmail.setError("invalid email");
+                    return;
                 }
                 if (TextUtils.isEmpty(edEmail.getText().toString().trim())) {
                     edEmail.setError("email can't be empty");
+                    return;
                 }
                 if (!edContact.getText().toString().trim().matches(mobilePattern)) {
                     edContact.setError("mobile must be of 10 digits");
+                    return;
                 }
                 if (TextUtils.isEmpty(edContact.getText().toString().trim())) {
                     edContact.setError("mobile can't be empty");
+                    return;
                 }
 
                 if (TextUtils.isEmpty(edPIN.getText().toString().trim())) {
                     edPIN.setError("PIN can't be empty");
+                    return;
                 }
                 if (TextUtils.isEmpty(edName.getText().toString().trim())
                         && TextUtils.isEmpty(edCity.getText().toString().trim())
@@ -279,28 +302,17 @@ public class AddAddress extends AppCompatActivity {
                     edPIN.setError(null);
                     Toast.makeText(AddAddress.this, "All the fields are mandatory   ", Toast.LENGTH_SHORT).show();
 
-                   /* Snackbar snackbar = Snackbar.make(view, "All the fields are mandatory", Snackbar.LENGTH_SHORT);
 
-                    //to change the background color of snackbar
-                    View sbView = snackbar.getView();
-                    sbView.setBackgroundColor(getResources().getColor(R.color.greendark));
-
-                    //to change the text size of snackbar
-                    TextView sbTextView = sbView.findViewById(android.support.design.R.id.snackbar_text);
-                    sbTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, 40);
-
-                    //to change the text alignment of text
-                    sbTextView.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
-
-                    //to set the height of snackbar
-                    sbView.setMinimumHeight(150);
-
-                    snackbar.show();*/
-
-                } else {
-
-
-                    if (edName.getText().toString().trim().matches(namePattern) && edContact.getText().toString().trim().matches(mobilePattern)
+                } else if (!TextUtils.isEmpty(edName.getText().toString().trim())
+                        && !TextUtils.isEmpty(edCity.getText().toString().trim())
+                        && !TextUtils.isEmpty(edEmail.getText().toString().trim())
+                        && !TextUtils.isEmpty(edContact.getText().toString().trim())
+                        && !TextUtils.isEmpty(edAddress.getText().toString().trim())
+                        && !TextUtils.isEmpty(edLandmark.getText().toString().trim())
+                        && !TextUtils.isEmpty(edState.getText().toString().trim())
+                        && !TextUtils.isEmpty(edPIN.getText().toString().trim())
+                ) {
+                    if (/*edName.getText().toString().trim().matches(namePattern) &&*/ edContact.getText().toString().trim().matches(mobilePattern)
                             && edEmail.getText().toString().trim().matches(emailPattern)) {
                         intent = getIntent();
                         dialog.show();
@@ -312,20 +324,11 @@ public class AddAddress extends AppCompatActivity {
                         edState.setError(null);
                         edPIN.setError(null);
 
-                        addressPojo = new AddressPojo();
-                        addressPojo.setName(edName.getText().toString().trim());
-                        addressPojo.setEmail(edEmail.getText().toString().trim());
-                        addressPojo.setAddress(edAddress.getText().toString().trim().trim());
-                        addressPojo.setLandmark(edLandmark.getText().toString().trim());
-                        addressPojo.setMobile(edContact.getText().toString().trim());
-                        addressPojo.setPin(edPIN.getText().toString().trim());
-                        addressPojo.setState(edState.getText().toString().trim());
-                        addressPojo.setCity(edCity.getText().toString().trim());
-
+                        AddressClass addressClass = new AddressClass(edName.getText().toString().trim(), edLandmark.getText().toString().trim(), edContact.getText().toString().trim(), edEmail.getText().toString().trim(), edPIN.getText().toString().trim(), edState.getText().toString().trim(), edCity.getText().toString().trim(), edAddress.getText().toString().trim().trim(),deleteKey);
 
                         userMobile = sharedPreferences.getString("userMobile", "");
                         databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Address");
-                        databaseReference.child(deleteKey).setValue(addressPojo);
+                        databaseReference.child(deleteKey).setValue(addressClass);
 
                         dialog.cancel();
                         String title = intent.getStringExtra("title2");

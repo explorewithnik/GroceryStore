@@ -43,7 +43,7 @@ dependencies {
     implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
     implementation 'me.relex:circleindicator:1.2.2@aar'
     implementation 'com.github.santalu:auto-viewpager:1.0.2'
-    implementation 'com.github.yesidlazaro:GmailBackground:1.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }
 apply plugin: 'com.google.gms.google-services'

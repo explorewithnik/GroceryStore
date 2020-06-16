@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Handler;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,9 +21,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.niket.grocerystore.Activities.HomePage;
+import com.example.niket.grocerystore.ItemsPOJO.Category_Items_POJO;
 import com.example.niket.grocerystore.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,7 +50,7 @@ public class PaymentOptions extends AppCompatActivity {
     String appName = "The Grocery Store";
     String transactionReference;
     String merchantCode = "1000200300";
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, databaseReferenceSearch, databaseReferenceCart, databaseReferenceCartStatus, databaseReferenceItems, databaseReferenceProducts;
     ProgressDialog dialog;
     String mode;
 
@@ -91,9 +99,15 @@ public class PaymentOptions extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("save", 0);
         userMobile = sharedPreferences.getString("userMobile", "");
 
+        databaseReferenceProducts = firebaseDatabase.getReference("data").child("products");
+        databaseReferenceSearch = firebaseDatabase.getReference("data").child("search").child("products");
+        databaseReferenceItems = firebaseDatabase.getReference("data").child("items");
         databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Orders");
+        databaseReferenceCart = firebaseDatabase.getReference("data").child("Cart").child("products");
+        databaseReferenceCartStatus = firebaseDatabase.getReference("data").child("cartStatus").child("totalCount");
 
         bhimcv.setEnabled(false);
+        //Bhim
         bhimcv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,6 +139,7 @@ public class PaymentOptions extends AppCompatActivity {
                 }
             }
         });
+        //bhimm close
 
         phonePecv.setEnabled(false);
         phonePecv.setOnClickListener(new View.OnClickListener() {
@@ -165,14 +180,10 @@ public class PaymentOptions extends AppCompatActivity {
                 mode = "Cash";
 
                 dialog.show();
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        dialog.cancel();
-                        Toast.makeText(PaymentOptions.this, "Order Placed Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent1 = new Intent(PaymentOptions.this, HomePage.class);
-                        startActivity(intent1);
-
                         OrderPojo orderPojo = new OrderPojo();
                         orderPojo.setName(name);
                         orderPojo.setCity(city);
@@ -189,6 +200,76 @@ public class PaymentOptions extends AppCompatActivity {
                         orderPojo.setLandMark(landmark);
                         orderPojo.setMode(mode);
                         databaseReference.push().setValue(orderPojo);
+                        databaseReferenceCart.setValue(null);
+                        databaseReferenceCartStatus.setValue(0);
+
+                        databaseReferenceSearch.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                    String name = data.getKey();
+                                    if (name != null)
+                                        databaseReferenceSearch.child(name).child("buttonItemCount").setValue(0);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+                        databaseReferenceProducts.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                    String categoryName = data.getKey();
+                                    for (DataSnapshot data2 : data.getChildren()) {
+                                        String itemCatName = data2.getKey();
+                                        for (DataSnapshot data3 : data2.getChildren()) {
+                                            String itemName = data3.getKey();
+                                            Log.e("databaseReferenceItems", "categoryName is : " + categoryName + " itemName is : " + itemName);
+                                            if (categoryName != null && itemCatName != null && itemName != null)
+                                                databaseReferenceProducts.child(categoryName).child(itemCatName).child(itemName).child("buttonItemCount").setValue(0);
+                                        }
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+                        databaseReferenceItems.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                    String categoryName = data.getKey();
+                                    for (DataSnapshot data2 : data.getChildren()) {
+                                        String itemName = data2.getKey();
+                                        Log.e("databaseReferenceItems", "categoryName is : " + categoryName + " itemName is : " + itemName);
+                                        if (categoryName != null && itemName != null)
+                                            databaseReferenceItems.child(categoryName).child(itemName).child("buttonItemCount").setValue(0);
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                        dialog.cancel();
+
+                        Toast.makeText(PaymentOptions.this, "Order Placed Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(PaymentOptions.this, HomePage.class);
+                        startActivity(intent1);
+                        finish();
                     }
                 }, 2000);
 
@@ -232,11 +313,22 @@ public class PaymentOptions extends AppCompatActivity {
                     orderPojo.setMode(mode);
                     databaseReference.push().setValue(orderPojo);
 
+
                     dialog.cancel();
                     Toast.makeText(PaymentOptions.this, "Order Placed Successfully", Toast.LENGTH_SHORT).show();
+
+                    /*String senderEmail = email;
+                    Intent email = new Intent(android.content.Intent.ACTION_SENDTO);
+                    email.putExtra(Intent.EXTRA_EMAIL, new String[]{senderEmail});
+                    email.putExtra(Intent.EXTRA_SUBJECT, "Grocery Store Order Status");
+                    email.putExtra(Intent.EXTRA_TEXT, message);
+                    //need this to prompts email client only
+                    email.setType("message/rfc822");
+                    startActivity(Intent.createChooser(email, "Choose an Email client :"));*/
+
                     Intent intent1 = new Intent(PaymentOptions.this, HomePage.class);
                     startActivity(intent1);
-
+                    finish();
 
                 } else {
                     Toast.makeText(this, "Payment Failed", Toast.LENGTH_SHORT).show();
@@ -252,5 +344,4 @@ public class PaymentOptions extends AppCompatActivity {
         int c = random.nextInt(50000000);
         return a + b + c;
     }
-
 }

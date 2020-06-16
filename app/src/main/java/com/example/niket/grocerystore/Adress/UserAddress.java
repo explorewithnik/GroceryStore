@@ -29,7 +29,7 @@ public class UserAddress extends AppCompatActivity {
     DatabaseReference databaseReference;
     String userMobile, totalAmount;
     SharedPreferences sharedPreferences;
-    AddressPojo addressPojo;
+    AddressClass addressPojo;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     AddressAdapter addressAdapter;
@@ -75,19 +75,19 @@ public class UserAddress extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                ArrayList<AddressPojo> arrayListAddressPojos = new ArrayList<>();
+                ArrayList<AddressClass> arrayListAddressPojos = new ArrayList<>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
 
-                    addressPojo = new AddressPojo();
+                    addressPojo = new AddressClass();
                     addressPojo.setName(data.child("name").getValue(String.class));
-                    addressPojo.setCity(data.child("city").getValue(String.class));
-                    addressPojo.setState(data.child("state").getValue(String.class));
-                    addressPojo.setPin(data.child("pin").getValue(String.class));
-                    addressPojo.setMobile(data.child("mobile").getValue(String.class));
-                    addressPojo.setLandmark(data.child("landmark").getValue(String.class));
-                    addressPojo.setAddress(data.child("address").getValue(String.class));
-                    addressPojo.setEmail(data.child("email").getValue(String.class));
-                    addressPojo.setDeletekey(data.getKey());
+                    addressPojo.setUserCity(data.child("userCity").getValue(String.class));
+                    addressPojo.setUserState(data.child("userState").getValue(String.class));
+                    addressPojo.setUserPinCode(data.child("userPinCode").getValue(String.class));
+                    addressPojo.setUserMobile(data.child("userMobile").getValue(String.class));
+                    addressPojo.setUserLandmark(data.child("userLandmark").getValue(String.class));
+                    addressPojo.setUserFlatNumber(data.child("userFlatNumber").getValue(String.class));
+                    addressPojo.setUserEmail(data.child("userEmail").getValue(String.class));
+                    addressPojo.setAddressDelteId(data.getKey());
 
                     arrayListAddressPojos.add(addressPojo);
 

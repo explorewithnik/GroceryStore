@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    app:cardMaxElevation="15dp"
     android:layout_marginStart="7dp"
+    android:layout_marginTop="7dp"
     android:layout_marginEnd="7dp"
     android:layout_marginBottom="7dp"
-    android:layout_marginTop="7dp">
+    app:cardCornerRadius="5dp"
+    app:cardMaxElevation="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10">
+        android:weightSum="12.5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,8 +28,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Order No"
                 android:textSize="18sp" />
 
@@ -39,8 +39,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -56,8 +56,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Date"
                 android:textSize="18sp" />
 
@@ -68,8 +68,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -85,8 +85,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Amount"
                 android:textSize="18sp" />
 
@@ -96,8 +96,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -113,8 +113,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Delivery"
                 android:textSize="18sp" />
 
@@ -124,10 +124,43 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="start|center"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:textSize="18sp" />
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="start|center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Status"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/orderStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="start|center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="In transit"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

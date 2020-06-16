@@ -6,6 +6,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class NavigationAddressAdapter extends RecyclerView.Adapter<NavigationAddressAdapter.ContactViewHolder> {
-    private ArrayList<AddressPojo> arrayListAddressPojos;
+    private ArrayList<AddressClass> arrayListAddressPojos;
     private Context mContext;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String userMobile;
 
 
-    NavigationAddressAdapter(Context context, ArrayList<AddressPojo> arrayListAddressPojos, String userMobile) {
+    NavigationAddressAdapter(Context context, ArrayList<AddressClass> arrayListAddressPojos, String userMobile) {
         this.mContext = context;
         this.arrayListAddressPojos = arrayListAddressPojos;
         this.userMobile = userMobile;
@@ -44,28 +45,29 @@ public class NavigationAddressAdapter extends RecyclerView.Adapter<NavigationAdd
 
         holder.radioButton.setVisibility(View.INVISIBLE);
 
-        AddressPojo addressPojo = arrayListAddressPojos.get(position);
+        AddressClass addressPojo = arrayListAddressPojos.get(position);
         holder.tvname.setText(addressPojo.getName());
-        holder.tvmobile.setText(addressPojo.getMobile());
-        String tvStateCityPINText = addressPojo.getState() + ", " + addressPojo.getCity() + "- " + addressPojo.getPin();
+        holder.tvmobile.setText(addressPojo.getUserMobile());
+        String tvStateCityPINText = addressPojo.getUserState() + ", " + addressPojo.getUserCity() + "- " + addressPojo.getUserPinCode();
         holder.tvStateCityPIN.setText(tvStateCityPINText);
-        holder.tvlandmark.setText(addressPojo.getLandmark());
-        holder.tvflatNo.setText(addressPojo.getAddress());
+        holder.tvlandmark.setText(addressPojo.getUserLandmark());
+        holder.tvflatNo.setText(addressPojo.getUserFlatNumber());
 
         holder.tvedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddressPojo addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
+                AddressClass addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
+
                 Intent intent = new Intent(mContext, AddAddress.class);
                 intent.putExtra("name2", addressPojo.getName());
-                intent.putExtra("mobile2", addressPojo.getMobile());
-                intent.putExtra("state2", addressPojo.getState());
-                intent.putExtra("city2", addressPojo.getCity());
-                intent.putExtra("pin2", addressPojo.getPin());
-                intent.putExtra("email2", addressPojo.getEmail());
-                intent.putExtra("landmark2", addressPojo.getLandmark());
-                intent.putExtra("flatno2", addressPojo.getAddress());
-                intent.putExtra("deleteKey", addressPojo.getDeletekey());
+                intent.putExtra("mobile2", addressPojo.getUserMobile());
+                intent.putExtra("state2", addressPojo.getUserState());
+                intent.putExtra("city2", addressPojo.getUserCity());
+                intent.putExtra("pin2", addressPojo.getUserPinCode());
+                intent.putExtra("email2", addressPojo.getUserEmail());
+                intent.putExtra("landmark2", addressPojo.getUserLandmark());
+                intent.putExtra("flatno2", addressPojo.getUserFlatNumber());
+                intent.putExtra("deleteKey", addressPojo.getAddressDelteId());
                 intent.putExtra("title", "Update Address");
                 intent.putExtra("title2", "NavigationAdd");
 
@@ -76,9 +78,9 @@ public class NavigationAddressAdapter extends RecyclerView.Adapter<NavigationAdd
         holder.tvremove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddressPojo addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
+                AddressClass addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
                 firebaseDatabase = FirebaseDatabase.getInstance();
-                databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Address").child(addressPojo.getDeletekey());
+                databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Address").child(addressPojo.getAddressDelteId());
                 databaseReference.setValue(null);
             }
         });

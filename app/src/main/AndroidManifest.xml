@@ -46,28 +46,28 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Search.SearchViewActivity"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
         </activity>
         <activity
             android:name=".CartActivity.Cart"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
         </activity>
         <activity
             android:name=".ExpandableRecyclerViewImplementation.ExpandableListing"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
         </activity>
         <activity
             android:name=".Activities.OrderHistory"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
@@ -75,7 +75,7 @@
         <activity
             android:name=".Activities.Profile"
             android:label="Edit Profile"
-            android:parentActivityName=".Activities.HomePage"
+            
             android:windowSoftInputMode="adjustNothing">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -88,7 +88,7 @@
             android:label="Password reset" />
         <activity
             android:name=".Activities.More"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
@@ -101,25 +101,28 @@
                 android:value=".ExpandableRecyclerViewImplementation.ExpandableListing" />
         </activity>
         <activity
+            android:launchMode="singleTask"
             android:name=".Adress.UserAddress"
-            android:parentActivityName=".Activities.HomePage"
+            
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
         </activity>
         <activity
+            android:launchMode="singleTask"
             android:name=".Adress.AddAddress"
-            android:parentActivityName=".Activities.HomePage"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />
         </activity>
-        <activity android:name=".PaymentGateway.PaymentOptions" />
+        <activity android:name=".PaymentGateway.PaymentOptions"
+            android:launchMode="singleTask"
+            />
         <activity
+            android:launchMode="singleTask"
             android:name=".Adress.NavigationAddress"
-            android:parentActivityName=".Activities.HomePage"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -128,7 +131,7 @@
         <activity
             android:name=".Activities.AboutUs"
             android:label="About Us"
-            android:parentActivityName=".Activities.HomePage">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.HomePage" />

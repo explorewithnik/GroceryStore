@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 import com.example.niket.grocerystore.Activities.Login;
 import com.example.niket.grocerystore.POJO_Class.MyPojo;
 import com.example.niket.grocerystore.R;
@@ -116,53 +115,53 @@ public class EnterEmail extends AppCompatActivity {
                         count = 0;
                     } else {
                         dialog.show();
-                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                //checking if email exist or not from firebase
-                                if (checkIfEmailExist(email.getText().toString(), dataSnapshot)) {
-                                    dialog.cancel();
-                                    //used library for sendind code to gmail
-                                    BackgroundMail.newBuilder(EnterEmail.this)
-                                            .withUsername("choudharyniket5@gmail.com")
-                                            .withPassword("Niket@5186")
-                                            .withMailto(email.getText().toString())
-                                            .withType(BackgroundMail.TYPE_PLAIN)
-                                            .withSubject("Verification code")
-                                            .withBody(String.valueOf(randomNumber))
-                                            .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
-                                                @Override
-                                                public void onSuccess() {
-                                                    textInputEditmobile.setEnabled(false);
-                                                    textInputEditTextEmail.setEnabled(false);
-                                                    textInputEditverifyCode.setVisibility(View.VISIBLE);
-                                                    submitButton.setText("Verify");
-                                                    //do some magic
-                                                    // Toast.makeText(EnterEmail.this, "verification code sent to your mail", Toast.LENGTH_SHORT).show();
-                                                }
-                                            })
-                                            .withOnFailCallback(new BackgroundMail.OnFailCallback() {
-                                                @Override
-                                                public void onFail() {
-                                                    count = 0;
-                                                    //Toast.makeText(EnterEmail.this, "Network error ", Toast.LENGTH_SHORT).show();
-                                                }
-                                            })
-                                            .send();
-                                } else {
-                                    dialog.cancel();
-                                    email.setError("email not yet registered");
-                                    count = 0;
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                count = 0;
-                            }
-                        });
+//                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                //checking if email exist or not from firebase
+//                                if (checkIfEmailExist(email.getText().toString(), dataSnapshot)) {
+//                                    dialog.cancel();
+//                                    //used library for sendind code to gmail
+//                                    BackgroundMail.newBuilder(EnterEmail.this)
+//                                            .withUsername("explorewithnick@gmail.com")
+//                                            .withPassword("Niket@9193")
+//                                            .withMailto(email.getText().toString())
+//                                            .withType(BackgroundMail.TYPE_PLAIN)
+//                                            .withSubject("Verification code")
+//                                            .withBody(String.valueOf(randomNumber))
+//                                            .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+//                                                @Override
+//                                                public void onSuccess() {
+//                                                    textInputEditmobile.setEnabled(false);
+//                                                    textInputEditTextEmail.setEnabled(false);
+//                                                    textInputEditverifyCode.setVisibility(View.VISIBLE);
+//                                                    submitButton.setText("Verify");
+//                                                    //do some magic
+//                                                    // Toast.makeText(EnterEmail.this, "verification code sent to your mail", Toast.LENGTH_SHORT).show();
+//                                                }
+//                                            })
+//                                            .withOnFailCallback(new BackgroundMail.OnFailCallback() {
+//                                                @Override
+//                                                public void onFail() {
+//                                                    count = 0;
+//                                                    //Toast.makeText(EnterEmail.this, "Network error ", Toast.LENGTH_SHORT).show();
+//                                                }
+//                                            })
+//                                            .send();
+//                                } else {
+//                                    dialog.cancel();
+//                                    email.setError("email not yet registered");
+//                                    count = 0;
+//                                }
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                                count = 0;
+//                            }
+//                        });
 
                     }
 

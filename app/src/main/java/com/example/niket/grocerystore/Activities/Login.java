@@ -144,23 +144,23 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-        forgotPass();
+//        forgotPass();
     }
 
-    private void forgotPass() {
-        activityLoginBinding.forgotpass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (!isConnectingToInternet(Login.this)) {
-                    Toast.makeText(Login.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
-                } else {
-                    Intent intent = new Intent(Login.this, EnterEmail.class);
-                    startActivity(intent);
-                }
-            }
-        });
-    }
+//    private void forgotPass() {
+//        activityLoginBinding.forgotpass.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                if (!isConnectingToInternet(Login.this)) {
+//                    Toast.makeText(Login.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Intent intent = new Intent(Login.this, EnterEmail.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        });
+//    }
 
     public static boolean isConnectingToInternet(Context context) {
         ConnectivityManager connectivity =

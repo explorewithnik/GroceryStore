@@ -73,7 +73,6 @@
                     android:gravity="bottom|top"
                     android:text="KUMBHA MARG, PRATAP NAGAR" />
 
-
                 <TextView
                     android:id="@+id/addressSCP"
                     android:layout_width="match_parent"

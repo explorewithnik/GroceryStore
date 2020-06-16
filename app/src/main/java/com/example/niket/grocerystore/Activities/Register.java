@@ -46,7 +46,7 @@ public class Register extends AppCompatActivity {
     SelectImageHelper helper;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference,databaseReferenceForBanner;
 
     StorageReference storageReference;
 
@@ -225,6 +225,7 @@ public class Register extends AppCompatActivity {
 
                         //get the DatabaseReference
                         databaseReference = firebaseDatabase.getReference("data").child("users");
+                        databaseReferenceForBanner = firebaseDatabase.getReference("data").child("Banner Images");
 
                         StorageReference storageReference2 = storageReference.child(s1);
 

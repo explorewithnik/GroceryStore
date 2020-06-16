@@ -230,26 +230,17 @@ public class HomePage extends AppCompatActivity
     }
 
     private void showBannerOnViewPager() {
-
         databaseReferenceForBanner.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-
                     bannerPojo = new BannerPojo();
-
                     if (data.child("bannerImage").getValue(String.class) != null) {
                         bannerPojo.setBannerImage(data.child("bannerImage").getValue(String.class));
                         bannerArraylist.add(bannerPojo);
                     }
-
-
                 }
-
                 bannerAdapter = new BannerAdapter(HomePage.this, bannerArraylist);
-
 
                 viewPager.setAdapter(bannerAdapter);
                 indicator.setViewPager(viewPager);
@@ -279,7 +270,6 @@ public class HomePage extends AppCompatActivity
 
                     for (DataSnapshot data2 : dataSnapshot1.getChildren()) {
                         Category_Items_POJO category_items_pojo = new Category_Items_POJO();
-
                         category_items_pojo.setItemName(data2.child("itemName").getValue(String.class));
                         category_items_pojo.setItemWeight(data2.child("itemWeight").getValue(String.class));
                         category_items_pojo.setItemPrice(data2.child("itemPrice").getValue(Integer.class));
@@ -289,9 +279,8 @@ public class HomePage extends AppCompatActivity
                         category_items_pojo.setPlusMinusButton(data2.child("plusMinusButton").getValue(String.class));
                         category_items_pojo.setItemCatName(data2.child("itemCatName").getValue(String.class));
                         singleItemArraylist.add(category_items_pojo);
-
-
                     }
+
                     categories_pojo = new Categories_POJO();
                     categories_pojo.setCategoryName(categoryName);
                     categories_pojo.setAllItemInSectionArralist(singleItemArraylist);
