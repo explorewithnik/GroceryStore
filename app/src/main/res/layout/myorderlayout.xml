@@ -11,33 +11,35 @@
     app:cardMaxElevation="15dp">
 
     <LinearLayout
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="12.5">
+        android:weightSum="14">
 
         <LinearLayout
+            android:layout_marginBottom="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"
+            android:layout_weight="2.8"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Order No"
+                android:text="Order number :"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/OrderNo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -45,20 +47,21 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginBottom="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"
+            android:layout_weight="2.8"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Date"
+                android:text="Date :"
                 android:textSize="18sp" />
 
 
@@ -66,7 +69,7 @@
                 android:id="@+id/orderDate"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -74,27 +77,28 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginBottom="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"
+            android:layout_weight="2.8"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Amount"
+                android:text="Amount :"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/orderfinalAmount"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -102,27 +106,28 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginBottom="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"
+            android:layout_weight="3.0"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Delivery"
+                android:text="Delivery :"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/orderName"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -131,27 +136,28 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginBottom="3dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"
+            android:layout_weight="2.8"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Status"
+                android:text="Status :"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/orderStatus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:gravity="start|center"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"

@@ -14,6 +14,17 @@ public class Category_Items_POJO {
     private String categoryName;
     private Integer totalItemAmount;
     private String itemCatName;
+    private String searchItemName ;
+
+    public String getSearchItemName() {
+        return searchItemName;
+    }
+
+    public void setSearchItemName(String searchItemName) {
+        this.searchItemName = searchItemName;
+    }
+
+
 
     public String getItemCatName() {
         return itemCatName;
@@ -95,6 +106,19 @@ public class Category_Items_POJO {
 
     }
 
+    public Category_Items_POJO(String itemImage, Integer itemPrice, String itemName, String itemWeight, String itemMRPStrikePrice, Integer buttonItemCount, String categoryName, Integer totalItemAmount, String itemCatName, String plusMinusButton, boolean addedTocart) {
+        this.itemImage = itemImage;
+        this.itemPrice = itemPrice;
+        this.itemName = itemName;
+        this.itemWeight = itemWeight;
+        this.itemMRPStrikePrice = itemMRPStrikePrice;
+        this.buttonItemCount = buttonItemCount;
+        this.categoryName = categoryName;
+        this.totalItemAmount = totalItemAmount;
+        this.itemCatName = itemCatName;
+        this.plusMinusButton = plusMinusButton;
+        this.addedTocart = addedTocart;
+    }
 
     public String getItemMRPStrikePrice() {
         return itemMRPStrikePrice;
@@ -111,7 +135,6 @@ public class Category_Items_POJO {
     public void setItemImage(String itemImage) {
         this.itemImage = itemImage;
     }
-
 
 
     public String getItemName() {

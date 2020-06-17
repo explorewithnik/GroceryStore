@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +43,9 @@ public class ExpandableListing extends AppCompatActivity {
     MenuItem menuItem;
     ActionBar actionBar;
 
+    SharedPreferences sharedPreferences;
+    String userMobile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +56,14 @@ public class ExpandableListing extends AppCompatActivity {
             actionBar = getSupportActionBar();
             actionBar.setTitle("Categories");
         }
+
+        sharedPreferences = getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
+
         expListView = findViewById(R.id.expandlv);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReferenceForExpandableRec = firebaseDatabase.getReference("data").child("products");
+        databaseReferenceForExpandableRec = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
 
         prepareListData();
 
@@ -124,7 +132,7 @@ public class ExpandableListing extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         menuItem = menu.findItem(R.id.cart_action2);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -134,6 +142,7 @@ public class ExpandableListing extends AppCompatActivity {
                     invalidateOptionsMenu();
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }

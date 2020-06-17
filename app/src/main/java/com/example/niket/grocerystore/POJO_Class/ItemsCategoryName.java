@@ -1,12 +1,10 @@
 package com.example.niket.grocerystore.POJO_Class;
 
-import java.util.ArrayList;
-
 /**
  * Created by Niket on 1/23/2018.
  */
 
-public class MyPojo {
+public class ItemsCategoryName {
     private String ID;
     private String Name;
     private String DOB;
@@ -15,7 +13,7 @@ public class MyPojo {
     private String password;
     private String Image_URL;
 
-
+    
 
     public String getID() {
         return ID;

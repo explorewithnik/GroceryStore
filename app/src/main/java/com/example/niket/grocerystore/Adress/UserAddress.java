@@ -94,11 +94,10 @@ public class UserAddress extends AppCompatActivity {
                 }
                 Intent intent=getIntent();
                 totalAmount=intent.getStringExtra("totalPrice");
-                addressAdapter = new AddressAdapter(UserAddress.this, arrayListAddressPojos, userMobile,totalAmount);
+                addressAdapter = new AddressAdapter(arrayListAddressPojos, userMobile,totalAmount,UserAddress.this);
                 recyclerView.setNestedScrollingEnabled(false);
                 recyclerView.setAdapter(addressAdapter);
                 addressAdapter.notifyDataSetChanged();
-
             }
 
             @Override

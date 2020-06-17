@@ -1,6 +1,7 @@
 package com.example.niket.grocerystore.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 
@@ -36,6 +37,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ContactViewHol
     private Context mContext;
     private DatabaseReference databaseReference, databaseReferenceForCategory, databaseReferenceForItemListing, databaseReferenceForSearch;
     private Category_Items_POJO category_items_pojo1;
+    SharedPreferences sharedPreferences;
+    String userMobile;
 
     public CartAdapter(Context context, ArrayList<Category_Items_POJO> categoriesItemsPOJOArralist) {
         this.mContext = context;
@@ -51,12 +54,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ContactViewHol
 
     @Override
     public void onBindViewHolder(final CartAdapter.ContactViewHolder holder, int position) {
+        sharedPreferences = mContext.getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference("data").child("Cart").child("products");
-        databaseReferenceForCategory = firebaseDatabase.getReference("data").child("items");
-        databaseReferenceForItemListing = firebaseDatabase.getReference("data").child("products");
-        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("search").child("products");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
+        databaseReferenceForCategory = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
+        databaseReferenceForItemListing = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
+        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products");
 
         Category_Items_POJO category_items_pojo = categoriesItemsPOJOArralist.get(position);
         holder.itemName.setText(category_items_pojo.getItemName());
@@ -93,7 +98,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ContactViewHol
                 categoriesItemsPOJOArralist.get(holder.getAdapterPosition()).setAddedTocart(true);
 
                 Log.d("7676", "onClick: " + category_items_pojo1.getItemName());
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("Cart").child("products").child(category_items_pojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("Cart").child("products").child(category_items_pojo1.getItemName()).child("buttonItemCount");
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull
                     @Override
@@ -148,7 +153,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ContactViewHol
                 category_items_pojo1 = categoriesItemsPOJOArralist.get(holder.getAdapterPosition());
                 categoriesItemsPOJOArralist.get(holder.getAdapterPosition()).setAddedTocart(false);
 
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("Cart").child("products").child(category_items_pojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("Cart").child("products").child(category_items_pojo1.getItemName()).child("buttonItemCount");
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull
                     @Override

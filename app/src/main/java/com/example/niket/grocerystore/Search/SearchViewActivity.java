@@ -1,6 +1,7 @@
 package com.example.niket.grocerystore.Search;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -44,7 +45,8 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     SearchViewAdapter searchViewAdapter;
-
+    private String userMobile;
+    SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
     GridLayoutManager layoutManager;
 
@@ -62,13 +64,14 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
             actionBar = getSupportActionBar();
             actionBar.setTitle(R.string.search);
         }
-
+        sharedPreferences = getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
         editTextSearch = findViewById(R.id.searchEdittext);
         linearLayout = findViewById(R.id.linearSearch);
 
         animation();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("data").child("search").child("products");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products");
 
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView = findViewById(R.id.recyclerview_search);
@@ -88,7 +91,7 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
                 if (!charSequence.toString().isEmpty()) {
                     String startWith = charSequence.toString().toLowerCase().trim();
                     String endWith = charSequence.toString().toLowerCase().trim() + "\uf8ff";
-                    query = firebaseDatabase.getReference("data").child("search").child("products").orderByChild("searchItemName").startAt(startWith).endAt(endWith);
+                    query = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products").orderByChild("searchItemName").startAt(startWith).endAt(endWith);
 
                     query.addValueEventListener(valueEventListener);
                 }
@@ -143,7 +146,7 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menuItem = menu.findItem(R.id.cart_action);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -187,7 +190,7 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
 
     @Override
     public void onAddProduct() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override
@@ -210,7 +213,7 @@ public class SearchViewActivity extends AppCompatActivity implements AddorRemove
 
     @Override
     public void onRemoveProduct() {
-        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull

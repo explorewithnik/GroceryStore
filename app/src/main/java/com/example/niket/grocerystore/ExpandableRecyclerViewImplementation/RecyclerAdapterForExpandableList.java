@@ -1,6 +1,7 @@
 package com.example.niket.grocerystore.ExpandableRecyclerViewImplementation;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 
@@ -38,6 +39,8 @@ public class RecyclerAdapterForExpandableList extends RecyclerView.Adapter<Recyc
     private DatabaseReference databaseReference, databaseReferenceForCategory, databaseReferenceForSearch;
     private MorePojo morePojo1;
     private String catName, itemCatName;
+    private String userMobile;
+    SharedPreferences sharedPreferences;
 
     RecyclerAdapterForExpandableList(Context mContext, ArrayList<MorePojo> morePojoArrayList, String catName, String itemCatName) {
         this.mContext = mContext;
@@ -56,11 +59,13 @@ public class RecyclerAdapterForExpandableList extends RecyclerView.Adapter<Recyc
 
     @Override
     public void onBindViewHolder(final RecyclerAdapterForExpandableList.MyViewHolder holder, final int position) {
+        sharedPreferences = mContext.getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("data").child("Cart").child("products");
-        databaseReferenceForCategory = firebaseDatabase.getReference("data").child("items");
-        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("search").child("products");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
+        databaseReferenceForCategory = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
+        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products");
 
         final MorePojo morePojo = morePojoArrayList.get(position);
         holder.productName.setText(morePojo.getItemName());
@@ -95,7 +100,7 @@ public class RecyclerAdapterForExpandableList extends RecyclerView.Adapter<Recyc
             public void onClick(final View view) {
                 morePojo1 = morePojoArrayList.get(holder.getAdapterPosition());
                 morePojoArrayList.get(holder.getAdapterPosition()).setAddedTocart(true);
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("products").child(catName).child(itemCatName).child(morePojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("products").child(catName).child(itemCatName).child(morePojo1.getItemName()).child("buttonItemCount");
 
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull
@@ -152,7 +157,7 @@ public class RecyclerAdapterForExpandableList extends RecyclerView.Adapter<Recyc
                 morePojoArrayList.get(holder.getAdapterPosition()).setAddedTocart(false);
 
 
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("products").child(catName).child(itemCatName).child(morePojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("products").child(catName).child(itemCatName).child(morePojo1.getItemName()).child("buttonItemCount");
 
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull

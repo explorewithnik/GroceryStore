@@ -99,12 +99,12 @@ public class PaymentOptions extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("save", 0);
         userMobile = sharedPreferences.getString("userMobile", "");
 
-        databaseReferenceProducts = firebaseDatabase.getReference("data").child("products");
-        databaseReferenceSearch = firebaseDatabase.getReference("data").child("search").child("products");
-        databaseReferenceItems = firebaseDatabase.getReference("data").child("items");
+        databaseReferenceProducts = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
+        databaseReferenceSearch = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products");
+        databaseReferenceItems = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
         databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Orders");
-        databaseReferenceCart = firebaseDatabase.getReference("data").child("Cart").child("products");
-        databaseReferenceCartStatus = firebaseDatabase.getReference("data").child("cartStatus").child("totalCount");
+        databaseReferenceCart = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
+        databaseReferenceCartStatus = firebaseDatabase.getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
         bhimcv.setEnabled(false);
         //Bhim

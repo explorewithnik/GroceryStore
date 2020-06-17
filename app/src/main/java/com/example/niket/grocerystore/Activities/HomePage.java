@@ -133,10 +133,10 @@ public class HomePage extends AppCompatActivity
             //firebase initilisation
             firebaseDatabase = FirebaseDatabase.getInstance();
 
-            databaseReferenceForCategory = firebaseDatabase.getReference("data").child("items");
+            databaseReferenceForCategory = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
             databaseReferenceForBanner = firebaseDatabase.getReference("data").child("Banner Images");
-            databaseReferenceToatalCount = firebaseDatabase.getReference("data").child("cartStatus");
-            databaseReference2 = firebaseDatabase.getReference("data").child("products");
+            databaseReferenceToatalCount = firebaseDatabase.getReference("data").child("users").child(userMobile).child("cartStatus");
+            databaseReference2 = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -318,7 +318,7 @@ public class HomePage extends AppCompatActivity
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menuItem = menu.findItem(R.id.cart_action);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -440,7 +440,7 @@ public class HomePage extends AppCompatActivity
 
     @Override
     public void onAddProduct() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override
@@ -467,7 +467,7 @@ public class HomePage extends AppCompatActivity
 
     @Override
     public void onRemoveProduct() {
-        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
@@ -490,5 +490,7 @@ public class HomePage extends AppCompatActivity
             }
         });
     }
+
+
 }
 

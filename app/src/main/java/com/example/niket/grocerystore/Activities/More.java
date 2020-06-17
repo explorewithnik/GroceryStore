@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -44,6 +45,8 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
     DatabaseReference databaseReference, databaseReferenceMore;
 
     String firebaseCategoryName, catIemName;
+    String userMobile;
+    SharedPreferences sharedPreferences;
 
     // vertical recyclerview
     RecyclerView recyclerView;
@@ -62,9 +65,11 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             actionBar = getSupportActionBar();
         }
+        sharedPreferences = getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
         namePattern = "^([a-zA-Z])$";
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("data").child("items");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
 
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView = findViewById(R.id.recyclerview_more);
@@ -82,7 +87,7 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
         }
 
 
-        databaseReferenceMore = firebaseDatabase.getReference("data").child("products");
+        databaseReferenceMore = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
 
 
         databaseReferenceMore.addValueEventListener(new ValueEventListener() {
@@ -143,7 +148,7 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
         getMenuInflater().inflate(R.menu.menu, menu);
         menuItem = menu.findItem(R.id.cart_action2);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -185,7 +190,7 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
 
     @Override
     public void onAddProduct() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override
@@ -212,7 +217,7 @@ public class More extends AppCompatActivity implements AddorRemoveCallbacks {
 
     @Override
     public void onRemoveProduct() {
-        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -35,7 +36,8 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
 
     Intent intentItemCatName;
     String itemCatName, catName;
-
+    SharedPreferences sharedPreferences;
+    String userMobile;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
@@ -58,6 +60,9 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
             actionBar = getSupportActionBar();
         }
 
+        sharedPreferences = getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
+
         intentItemCatName = getIntent();
 
         catName = intentItemCatName.getStringExtra("CatName");
@@ -76,7 +81,7 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
         recyclerView.setHasFixedSize(true);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("data").child("products").child(catName).child(itemCatName);
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products").child(catName).child(itemCatName);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -118,7 +123,7 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
         getMenuInflater().inflate(R.menu.menu, menu);
         menuItem = menu.findItem(R.id.cart_action2);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -163,7 +168,7 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
 
     @Override
     public void onAddProduct() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override
@@ -189,7 +194,7 @@ public class CategoryChildListing extends AppCompatActivity implements AddorRemo
 
     @Override
     public void onRemoveProduct() {
-        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull

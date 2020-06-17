@@ -1,6 +1,7 @@
 package com.example.niket.grocerystore.CartActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,7 +34,7 @@ import java.util.ArrayList;
 
 public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference, databaseReferenceForTotalPrice;
+    DatabaseReference databaseReference;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     CartAdapter cartAdapter;
@@ -43,7 +44,9 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
     LinearLayout checkout;
     CardView cardView;
     ActionBar actionBar;
+    String userMobile;
     int totalAmount;
+    SharedPreferences sharedPreferences;
     ImageView arrow;
 
     @Override
@@ -57,13 +60,15 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
             actionBar.setTitle("Cart");
         }
 
+        sharedPreferences = getSharedPreferences("save", 0);
+        userMobile = sharedPreferences.getString("userMobile", "");
+
         cardView = findViewById(R.id.chk);
         textViewTotal = findViewById(R.id.total);
         checkout = findViewById(R.id.checkout);
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference("data").child("Cart").child("products");
-        databaseReferenceForTotalPrice = firebaseDatabase.getReference("data").child("totalPrice").child("total");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
 
         textViewcheckout = findViewById(R.id.tvchk);
         arrow = findViewById(R.id.arrow);
@@ -87,7 +92,7 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
                 Intent intent = new Intent(Cart.this, UserAddress.class);
                 intent.putExtra("totalPrice", String.valueOf(totalAmount));
                 startActivity(intent);
-
+                finish();
             }
         });
 
@@ -100,8 +105,8 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menuItem = menu.findItem(R.id.cart_action);
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
-        rootRef.addValueEventListener(new ValueEventListener() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Integer count = dataSnapshot.getValue(Integer.class);
@@ -174,7 +179,7 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
 
     @Override
     public void onAddProduct() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override
@@ -200,7 +205,7 @@ public class Cart extends AppCompatActivity implements AddorRemoveCallbacks {
 
     @Override
     public void onRemoveProduct() {
-        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("cartStatus").child("totalCount");
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
         rootRef.runTransaction(new Transaction.Handler() {
             @NonNull
             @Override

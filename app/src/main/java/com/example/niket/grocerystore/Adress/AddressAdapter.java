@@ -1,5 +1,6 @@
 package com.example.niket.grocerystore.Adress;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -24,15 +25,15 @@ import java.util.ArrayList;
 
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ContactViewHolder> {
     private ArrayList<AddressClass> arrayListAddressPojos;
-    private Context mContext;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String userMobile;
     private String totalAmount;
+    private Activity activity;
 
 
-    AddressAdapter(Context context, ArrayList<AddressClass> arrayListAddressPojos, String userMobile, String totalAmount) {
-        this.mContext = context;
+    AddressAdapter(ArrayList<AddressClass> arrayListAddressPojos, String userMobile, String totalAmount, Activity activity) {
+        this.activity=activity;
         this.arrayListAddressPojos = arrayListAddressPojos;
         this.userMobile = userMobile;
         this.totalAmount = totalAmount;
@@ -62,7 +63,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ContactV
             public void onClick(View view) {
                 AddressClass addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
 
-                Intent intent = new Intent(mContext, AddAddress.class);
+                Intent intent = new Intent(activity, AddAddress.class);
                 intent.putExtra("name2", addressPojo.getName());
                 intent.putExtra("mobile2", addressPojo.getUserMobile());
                 intent.putExtra("state2", addressPojo.getUserState());
@@ -75,7 +76,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ContactV
                 intent.putExtra("title", "Update Address");
                 intent.putExtra("title2", "userAdd");
                 intent.putExtra("totalPrice", String.valueOf(totalAmount));
-                mContext.startActivity(intent);
+                activity.startActivity(intent);
             }
         });
 
@@ -94,7 +95,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ContactV
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 AddressClass addressPojo = arrayListAddressPojos.get(holder.getAdapterPosition());
                 if (b) {
-                    Intent intent = new Intent(mContext, PaymentOptions.class);
+                    Intent intent = new Intent(activity, PaymentOptions.class);
                     intent.putExtra("name2", addressPojo.getName());
                     intent.putExtra("mobile2", addressPojo.getUserMobile());
                     intent.putExtra("state2", addressPojo.getUserState());
@@ -104,10 +105,9 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ContactV
                     intent.putExtra("landmark2", addressPojo.getUserLandmark());
                     intent.putExtra("flatno2", addressPojo.getUserFlatNumber());
                     intent.putExtra("finalAmount", totalAmount);
-                    mContext.startActivity(intent);
-
                     holder.radioButton.setChecked(false);
-
+                    activity.startActivity(intent);
+                    activity.finish();
                 }
 
             }

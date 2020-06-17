@@ -11,6 +11,9 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.example.niket.grocerystore.Commons;
+import com.example.niket.grocerystore.ItemsPOJO.Categories_POJO;
+import com.example.niket.grocerystore.ItemsPOJO.Category_Items_POJO;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -35,7 +38,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -46,7 +51,7 @@ public class Register extends AppCompatActivity {
     SelectImageHelper helper;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference,databaseReferenceForBanner;
+    DatabaseReference databaseReference, databaseReferenceForBanner;
 
     StorageReference storageReference;
 
@@ -255,14 +260,15 @@ public class Register extends AppCompatActivity {
 
                                                 databaseReference.child(activityRegisterBinding.editTextMobile.getText().toString()).setValue(myPojo);
 
+
                                                 dialog.cancel();
 
-
-                                                Toast.makeText(Register.this, "Register Successfull", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(Register.this, "Register Successful", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(Register.this, Login.class);
                                                 //intent.putExtra("Profile_image", myPojo.getImage_URL());
                                                 //intent.putExtra("username",activityRegisterBinding.editTextName.getText().toString());
                                                 startActivity(intent);
+                                                finish();
                                             }
                                         });
                                     }

@@ -38,7 +38,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
     private ArrayList<Category_Items_POJO> categoriesItemsPOJOArrayList;
     private Context mContext;
     private String userMobile;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference,databaseReferenceCartStatus;
     private DatabaseReference databaseReferenceForSearch;
     private DatabaseReference databaseReference2;
     private String CategoryName;
@@ -66,10 +66,11 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
         Log.e("userMobile", "userMobile " + userMobile);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
+        databaseReferenceCartStatus = firebaseDatabase.getReference("data").child("users").child(userMobile).child("cartStatus").child("totalCount");
 
-        databaseReference = firebaseDatabase.getReference("data").child("Cart").child("products");
-        databaseReference2 = firebaseDatabase.getReference("data").child("products");
-        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("search").child("products");
+        databaseReference = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
+        databaseReference2 = firebaseDatabase.getReference("data").child("users").child(userMobile).child("products");
+        databaseReferenceForSearch = firebaseDatabase.getReference("data").child("users").child(userMobile).child("search").child("products");
 
         final Category_Items_POJO category_items_pojo = categoriesItemsPOJOArrayList.get(position);
 
@@ -107,7 +108,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                 category_items_pojo1 = categoriesItemsPOJOArrayList.get(holder.getAdapterPosition());
 
                 categoriesItemsPOJOArrayList.get(holder.getAdapterPosition()).setAddedTocart(true);
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("items").child(CategoryName).child(category_items_pojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("items").child(CategoryName).child(category_items_pojo1.getItemName()).child("buttonItemCount");
 
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull
@@ -132,7 +133,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                                 category_items_pojo2.setTotalItemAmount((count + 1) * (category_items_pojo1.getItemPrice()));
                                 category_items_pojo2.setItemCatName(category_items_pojo1.getItemCatName());
 
-
+                                databaseReferenceCartStatus.setValue(count+1);
                                 databaseReference.child(category_items_pojo1.getItemName()).setValue(category_items_pojo2);
                                 databaseReference2.child(CategoryName).child(category_items_pojo1.getItemCatName()).child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);
                                 databaseReferenceForSearch.child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);
@@ -162,7 +163,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                 category_items_pojo1 = categoriesItemsPOJOArrayList.get(holder.getAdapterPosition());
                 categoriesItemsPOJOArrayList.get(holder.getAdapterPosition()).setAddedTocart(false);
 
-                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("items").child(CategoryName).child(category_items_pojo1.getItemName()).child("buttonItemCount");
+                final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("data").child("users").child(userMobile).child("items").child(CategoryName).child(category_items_pojo1.getItemName()).child("buttonItemCount");
 
                 rootRef.runTransaction(new Transaction.Handler() {
                     @NonNull
@@ -185,6 +186,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                                 category_items_pojo2.setItemImage(category_items_pojo1.getItemImage());
                                 category_items_pojo2.setTotalItemAmount((count - 1) * (category_items_pojo1.getItemPrice()));
                                 category_items_pojo2.setItemCatName(category_items_pojo1.getItemCatName());
+
                                 databaseReference.child(category_items_pojo1.getItemName()).setValue(category_items_pojo2);
                                 databaseReference2.child(CategoryName).child(category_items_pojo1.getItemCatName()).child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count - 1);
                                 databaseReferenceForSearch.child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count - 1);
