@@ -50,7 +50,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-
+                                android:maxLength="10"
                                 android:id="@+id/Mobile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

@@ -20,14 +20,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:launchMode="singleTask"
+            
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
         <activity
             android:name=".Activities.Login"
-            android:launchMode="singleTask"
+            
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,118 +36,68 @@
             </intent-filter>
         </activity>
         <activity
-            android:launchMode="singleTask"
+            
             android:name=".Activities.Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateVisible" />
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+
         <activity
+            android:launchMode="singleTask"
             android:name=".Activities.HomePage"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_home_page"
-            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".Search.SearchViewActivity"
-            android:launchMode="singleTask"
-            >
 
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
+        <activity android:name=".Search.SearchViewActivity">
+
         </activity>
-        <activity android:name=".CartActivity.Cart"
+        <activity
             android:launchMode="singleTask"
-            >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
+            android:name=".CartActivity.Cart">
+
         </activity>
-        <activity android:name=".ExpandableRecyclerViewImplementation.ExpandableListing"
-            android:launchMode="singleTask"
-            >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
+        <activity android:name=".ExpandableRecyclerViewImplementation.ExpandableListing">
         </activity>
         <activity android:name=".Activities.OrderHistory"
-            android:launchMode="singleTask"
+            
             >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
+
         </activity>
         <activity
-            android:launchMode="singleTask"
             android:name=".Activities.Profile"
             android:label="Edit Profile"
+            android:windowSoftInputMode="adjustNothing"/>
 
-            android:windowSoftInputMode="adjustNothing">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
-        <activity android:name=".Activities.NoInternetConnection"
-            android:launchMode="singleTask"
-            />
-        <activity android:name=".ForgotPass.EnterEmail"
-            android:launchMode="singleTask"
-            />
+        <activity android:name=".Activities.NoInternetConnection" />
+        <activity android:name=".ForgotPass.EnterEmail" />
         <activity
-            android:launchMode="singleTask"
             android:name=".ForgotPass.UpdatePass"
             android:label="Password reset" />
-        <activity android:name=".Activities.More"
-            android:launchMode="singleTask"
-            >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
+        <activity android:name=".Activities.More"/>
         <activity
-            android:launchMode="singleTask"
             android:name=".ExpandableRecyclerViewImplementation.CategoryChildListing"
-            android:parentActivityName=".ExpandableRecyclerViewImplementation.ExpandableListing">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ExpandableRecyclerViewImplementation.ExpandableListing" />
-        </activity>
+            android:parentActivityName=".ExpandableRecyclerViewImplementation.ExpandableListing"/>
+
         <activity
             android:name=".Adress.UserAddress"
-            android:launchMode="singleTask"
+            android:theme="@style/AppTheme2"/>
 
-            android:theme="@style/AppTheme2">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
         <activity
             android:name=".Adress.AddAddress"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme2">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
+            android:theme="@style/AppTheme2"/>
+
         <activity
             android:name=".PaymentGateway.PaymentOptions"
-            android:launchMode="singleTask" />
+             />
         <activity
             android:name=".Adress.NavigationAddress"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme2">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
+            android:theme="@style/AppTheme2"/>
+
         <activity
-            android:launchMode="singleTask"
             android:name=".Activities.AboutUs"
-            android:label="About Us">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.HomePage" />
-        </activity>
+            android:label="About Us"/>
     </application>
 
 </manifest>

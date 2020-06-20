@@ -93,6 +93,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
             String addButtonText = "0";
             if (category_items_pojo.getButtonItemCount() != null)
                 addButtonText = category_items_pojo.getButtonItemCount().toString();
+            Log.e("addButtonText","addButtonText "+addButtonText);
             holder.addButton.setText(addButtonText);
             holder.addMinusButton.setVisibility(View.VISIBLE);
         }
@@ -133,7 +134,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                                 category_items_pojo2.setTotalItemAmount((count + 1) * (category_items_pojo1.getItemPrice()));
                                 category_items_pojo2.setItemCatName(category_items_pojo1.getItemCatName());
 
-                                databaseReferenceCartStatus.setValue(count+1);
+//                                databaseReferenceCartStatus.setValue(count+1);
                                 databaseReference.child(category_items_pojo1.getItemName()).setValue(category_items_pojo2);
                                 databaseReference2.child(CategoryName).child(category_items_pojo1.getItemCatName()).child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);
                                 databaseReferenceForSearch.child(category_items_pojo1.getItemName()).child("buttonItemCount").setValue(count + 1);
@@ -144,6 +145,9 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
 
                     @Override
                     public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
+                        if (mContext instanceof HomePage) {
+                            ((AddorRemoveCallbacks) mContext).onAddProduct();
+                        }
                         if (databaseError != null) {
                             System.out.println("Firebase counter increment failed.");
                         } else {
@@ -152,9 +156,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                         }
                     }
                 });
-                if (mContext instanceof HomePage) {
-                    ((AddorRemoveCallbacks) mContext).onAddProduct();
-                }
+
             }
         });
         holder.addMinusButton.setOnClickListener(new View.OnClickListener() {
@@ -197,6 +199,9 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
 
                     @Override
                     public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
+                        if (mContext instanceof HomePage) {
+                            ((AddorRemoveCallbacks) mContext).onRemoveProduct();
+                        }
                         if (databaseError != null) {
                             System.out.println("Firebase counter increment failed.");
                         } else {
@@ -204,9 +209,7 @@ public class MyCustomAdapterForItems extends RecyclerView.Adapter<MyCustomAdapte
                         }
                     }
                 });
-                if (mContext instanceof HomePage) {
-                    ((AddorRemoveCallbacks) mContext).onRemoveProduct();
-                }
+
 
             }
         });

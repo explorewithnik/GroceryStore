@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,11 +80,7 @@ public class HomePage extends AppCompatActivity
 
     //firebase
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReferenceForBanner;
-    DatabaseReference databaseReferenceForCategory;
-    DatabaseReference databaseReferenceForUserProfile;
-    DatabaseReference databaseReferenceToatalCount;
-    DatabaseReference databaseReference2;
+    DatabaseReference databaseReferenceForBanner, databaseReferenceForCategory, databaseReferenceForUserProfile, databaseReferenceToatalCount, databaseReference2, databaseReferenceForCart;
 
     SharedPreferences sharedPreferences, sharedPreferencesForAdapter;
 
@@ -132,7 +129,7 @@ public class HomePage extends AppCompatActivity
 
             //firebase initilisation
             firebaseDatabase = FirebaseDatabase.getInstance();
-
+            databaseReferenceForCart = firebaseDatabase.getReference("data").child("users").child(userMobile).child("Cart").child("products");
             databaseReferenceForCategory = firebaseDatabase.getReference("data").child("users").child(userMobile).child("items");
             databaseReferenceForBanner = firebaseDatabase.getReference("data").child("Banner Images");
             databaseReferenceToatalCount = firebaseDatabase.getReference("data").child("users").child(userMobile).child("cartStatus");
@@ -214,7 +211,6 @@ public class HomePage extends AppCompatActivity
                     }
                 }
                 if (userFound) {
-
                     textViewNameNav.setText(uName);
                     textViewMobileNav.setText(uMobile);
                     Glide.with(getApplicationContext()).load(uImage).into(imageViewProfileNav);
@@ -230,7 +226,7 @@ public class HomePage extends AppCompatActivity
     }
 
     private void showBannerOnViewPager() {
-        databaseReferenceForBanner.addValueEventListener(new ValueEventListener() {
+        databaseReferenceForBanner.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
@@ -331,9 +327,9 @@ public class HomePage extends AppCompatActivity
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
+
         if (cart_count == 0) {
             menuItem.setVisible(false);
         } else {
@@ -445,15 +441,13 @@ public class HomePage extends AppCompatActivity
             @NonNull
             @Override
             public Transaction.Result doTransaction(@NonNull MutableData mutableData) {
-                Object v = mutableData.getValue();
-                if (v != null && v.equals(0)) {
-                } else {
-                    Integer count = mutableData.getValue(Integer.class);
+                Integer count = mutableData.getValue(Integer.class);
                     if (count != null) {
-                        mutableData.setValue(count + 1);
+                        count = count + 1;
+                        Log.e("count", "count is : " + count);
+                        mutableData.setValue(count);
                         invalidateOptionsMenu();
                     }
-                }
                 return Transaction.success(mutableData);
             }
 

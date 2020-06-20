@@ -130,10 +130,8 @@ public class Login extends AppCompatActivity {
                                 editor.putString("userEmail", myPojo.getEmail());
                                 editor.apply();
 
+//                                databaseReference.child(myPojo.getMobile()).child("cartStatus").child("totalCount").setValue(0);
 
-                                insertHomePageData();
-                                insertCategoryWiseData();
-                                insertSearchData();
 
                                 dialog.cancel();
 
@@ -194,64 +192,5 @@ public class Login extends AppCompatActivity {
         finish();
     }
 
-    private void insertHomePageData() {
-        ArrayList<Category_Items_POJO> list = new Commons().getAtaAndOtherFlours();
-        for (int j = 0; j < list.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("items").child(list.get(j).getCategoryName()).child(list.get(j).getItemName()).setValue(list.get(j));
-        }
 
-        ArrayList<Category_Items_POJO> dryFruitList = new Commons().getDryFruitsDetails();
-        for (int j = 0; j < dryFruitList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("items").child(dryFruitList.get(j).getCategoryName()).child(dryFruitList.get(j).getItemName()).setValue(dryFruitList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> pulsesList = new Commons().getPulses();
-        for (int j = 0; j < pulsesList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("items").child(pulsesList.get(j).getCategoryName()).child(pulsesList.get(j).getItemName()).setValue(pulsesList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> riceAndGrainsList = new Commons().getRiceAndGrains();
-        for (int j = 0; j < riceAndGrainsList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("items").child(riceAndGrainsList.get(j).getCategoryName()).child(riceAndGrainsList.get(j).getItemName()).setValue(riceAndGrainsList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> spicesList = new Commons().getSpices();
-        for (int j = 0; j < spicesList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("items").child(spicesList.get(j).getCategoryName()).child(spicesList.get(j).getItemName()).setValue(spicesList.get(j));
-        }
-    }
-
-    private void insertSearchData() {
-        ArrayList<Category_Items_POJO> list = new Commons().getSearchData();
-        for (int j = 0; j < list.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("search").child("products").child(list.get(j).getItemName()).setValue(list.get(j));
-        }
-    }
-
-    private void insertCategoryWiseData() {
-        ArrayList<Category_Items_POJO> list = new Commons().getAtaAndOtherFlours();
-        for (int j = 0; j < list.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("products").child(list.get(j).getCategoryName()).child(list.get(j).getItemCatName()).child(list.get(j).getItemName()).setValue(list.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> dryFruitList = new Commons().getDryFruitsDetails();
-        for (int j = 0; j < dryFruitList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("products").child(dryFruitList.get(j).getCategoryName()).child(dryFruitList.get(j).getItemCatName()).child(dryFruitList.get(j).getItemName()).setValue(dryFruitList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> pulsesList = new Commons().getPulses();
-        for (int j = 0; j < pulsesList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("products").child(pulsesList.get(j).getCategoryName()).child(pulsesList.get(j).getItemCatName()).child(pulsesList.get(j).getItemName()).setValue(pulsesList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> riceAndGrainsList = new Commons().getRiceAndGrains();
-        for (int j = 0; j < riceAndGrainsList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("products").child(riceAndGrainsList.get(j).getCategoryName()).child(riceAndGrainsList.get(j).getItemCatName()).child(riceAndGrainsList.get(j).getItemName()).setValue(riceAndGrainsList.get(j));
-        }
-
-        ArrayList<Category_Items_POJO> spicesList = new Commons().getSpices();
-        for (int j = 0; j < spicesList.size(); j++) {
-            databaseReference.child(myPojo.getMobile()).child("products").child(spicesList.get(j).getCategoryName()).child(spicesList.get(j).getItemCatName()).child(spicesList.get(j).getItemName()).setValue(spicesList.get(j));
-        }
-    }
 }
